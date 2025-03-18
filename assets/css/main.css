@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@fontsource/great-vibes";
+
+
+/* Fuente base moderna */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fuente elegante para títulos románticos */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Fuente clásica para secciones de elegancia */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Fuente manuscrita con estilo artístico */
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+}
