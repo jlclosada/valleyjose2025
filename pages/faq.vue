@@ -10,8 +10,8 @@
           <button @click="toggleFAQ(index)"
             class="w-full text-left flex justify-betweern items-center py-4 text-xl font-semibold text-gray-800 focus:outline-none cursor-pointer">
             {{ faq.pregunta }}
-            <span :class="{ 'rotate-180': faq.abierto }" class="transition-transform duration-300 ml-3">
-              ⌄
+            <span :class="{ 'rotate-180': faq.abierto }" class="transition-transform duration-300 ml-3 flex items-center justify-center text-gray-500">
+              ⬇️
             </span>
           </button>
           <transition name="fade">
@@ -30,7 +30,7 @@ import { ref } from "vue";
 const faqs = ref([
   {
     pregunta: "¿Cómo debo ir vestido?",
-    respuesta: "El código de vestimenta es <b>formal</b>. Se recomienda traje para los hombres y vestido para las mujeres. Se recuerda que la boda es <b>durante el día</b>. En Noviembre Sevilla no es especialmente fría, pero se recomienda llevar algo de abrigo. <b>Si eres testigo, te toca chaqué</b>.",
+    respuesta: "El código de vestimenta es <b>formal</b>. Se recomienda traje para los hombres y vestido para las mujeres. <br>Se recuerda que la boda es <b>durante el día</b>. En Noviembre, en Sevilla no hace especialmente frío, pero se recomienda llevar algo de abrigo.<br><b>Si eres testigo, te toca chaqué</b>.",
     abierto: false
   },
   {
