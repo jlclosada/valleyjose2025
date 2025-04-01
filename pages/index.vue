@@ -127,18 +127,18 @@ img:hover {
 /* Mejorar visibilidad de los textos */
 h1,
 p {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 h1 {
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Responsividad: ajustar las imágenes en pantallas pequeñas */
 @media (max-width: 768px) {
 
   /* Mostrar solo algunas imágenes en pantallas móviles (3 primeras imágenes) */
-  .absolute:nth-child(n+5) {
+  .absolute:nth-child(n+0) {
     display: none;
   }
 

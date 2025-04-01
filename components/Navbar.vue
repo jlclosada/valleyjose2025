@@ -24,6 +24,7 @@
         <li><a href="/celebracion" class="nav-link">Celebración</a></li>
         <li><a href="/contact" class="nav-link">Contacto</a></li>
         <li><a href="/faq" class="nav-link">FAQ</a></li>
+        <li><a href="/gifts" class="nav-link">Regalos</a></li>
       </ul>
     </div>
 
@@ -37,6 +38,7 @@
           <li><a href="/celebracion" class="nav-link" @click="toggleMenu">Celebración</a></li>
           <li><a href="/contact" class="nav-link" @click="toggleMenu">Contacto</a></li>
           <li><a href="/faq" class="nav-link" @click="toggleMenu">FAQ</a></li>
+          <li><a href="/gifts" class="nav-link" @click="toggleMenu">Regalos</a></li>
         </ul>
       </div>
     </transition>
