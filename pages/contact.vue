@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full min-h-screen flex flex-col items-center text-center px-6 pt-24">
+  <div class="relative w-full min-h-screen flex flex-col items-center text-center pt-24">
     <div class="relative z-10 mt-2 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
       <h1 class="text-5xl md:text-6xl font-extrabold font-custom drop-shadow-lg animate-fade-slide">
         Contacto
