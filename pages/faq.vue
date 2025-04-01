@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col items-center text-center px-6 pt-24 bg-gray-50">
+  <div class="min-h-screen flex flex-col items-center text-center px-6 pt-24">
     <div class="max-w-4xl w-full bg-white p-8 rounded-3xl shadow-lg border border-gray-200">
       <h1 class="text-5xl md:text-6xl font-extrabold font-custom text-blue-900 mb-6">
         Preguntas Frecuentes
@@ -8,7 +8,7 @@
       <div class="space-y-4">
         <div v-for="(faq, index) in faqs" :key="index" class="border-b border-gray-300">
           <button @click="toggleFAQ(index)"
-            class="w-full text-left flex justify-between items-center py-4 text-xl font-semibold text-gray-800 focus:outline-none">
+            class="w-full text-left flex justify-between items-center py-4 text-xl font-semibold text-gray-800 focus:outline-none cursor-pointer">
             {{ faq.pregunta }}
             <span :class="{ 'rotate-180': faq.abierto }" class="transition-transform duration-300">
               ⌄

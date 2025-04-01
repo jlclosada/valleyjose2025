@@ -14,11 +14,11 @@
 
     <!-- Detalles de la Ceremonia -->
     <div
-      class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700">
+      class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left">
       <h2 class="text-3xl font-bold">Detalles de la ceremonia</h2>
       <p class="mt-3 text-lg">📍 <strong>Cortijo El Esparragal, Gerena, Sevilla</strong></p>
-      <p class="text-lg">📅 <strong>22 de Noviembre de 2025</strong></p>
-      <p class="text-lg">⏰ <strong>13:30</strong></p>
+      <p class="text-lg mt-3">📅 <strong>22 de Noviembre de 2025</strong></p>
+      <p class="text-lg mt-3">⏰ <strong>13:30</strong></p>
     </div>
 
     <!-- Mapa Interactivo -->
