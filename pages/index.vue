@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 bg-cover bg-center bg-fixed">
+    class="relative w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed">
 
     <!-- Imágenes distribuidas de forma estética a los lados -->
     <div class="absolute inset-0 z-0">

@@ -132,20 +132,20 @@ onUnmounted(() => {
 @keyframes shimmer {
   0% {
     color: #17327c;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3),
-      0px 0px 10px rgba(109, 138, 217, 0.3);
+    text-shadow: 0px 0px 5px rgba(6, 6, 6, 0.2),
+      0px 0px 10px rgba(221, 225, 237, 0.2);
   }
 
   50% {
     color: #3350b9;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6),
-      0px 0px 20px rgba(30, 58, 138, 0.6);
+    text-shadow: 0px 0px 10px rgba(223, 214, 214, 0.4),
+      0px 0px 20px rgba(5, 14, 39, 0.4);
   }
 
   100% {
     color: #1e3a8a;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3),
-      0px 0px 10px rgba(30, 58, 138, 0.3);
+    text-shadow: 0px 0px 5px rgba(241, 235, 235, 0.2),
+      0px 0px 10px rgba(30, 58, 138, 0.2);
   }
 }
 

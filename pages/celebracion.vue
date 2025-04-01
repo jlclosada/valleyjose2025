@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full min-h-screen flex flex-col items-center text-center pt-24">
+  <div class="relative w-full min-h-screen flex flex-col items-center text-center pt-6">
     <!-- Contenido principal -->
     <div class="relative z-10 mt-10 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
       <h1 class="text-5xl md:text-6xl font-extrabold font-custom drop-shadow-lg animate-fade-slide">
@@ -108,15 +108,6 @@
           El cortijo también cuenta con un embalse, construido por el Marqués de Casa Oriol, que tiene una capacidad de
           dos millones de metros cúbicos de agua. Este embalse es crucial para el riego y contribuye a mantener el
           ecosistema de fauna silvestre en la finca.
-        </p>
-      </div>
-
-      <div class="mt-6">
-        <h3 class="text-2xl font-semibold">El Cortijo Hoy</h3>
-        <p class="mt-3 text-m">
-          Hoy en día, Cortijo El Esparragal es un lugar ideal para la celebración de bodas y eventos. Con sus amplias
-          instalaciones y su entorno natural, ofrece diversos espacios exteriores e interiores para hacer de cualquier
-          celebración un evento único e inolvidable.
         </p>
       </div>
     </div>
