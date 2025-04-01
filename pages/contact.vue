@@ -14,14 +14,14 @@
         <h3 class="text-2xl font-semibold">Novia</h3>
         <p class="text-lg"><strong>Nombre:</strong> {{ noviaNombre }}</p>
         <p class="text-lg"><strong>Teléfono:</strong> {{ noviaTelefono }}</p>
-        <p class="text-lg"><strong>Email:</strong> {{ noviaEmail }}</p>
+        <p class="text-lg"><strong>Email:</strong> <span class="email-text">{{ noviaEmail }}</span></p>
       </div>
 
       <div class="mt-6 text-left">
         <h3 class="text-2xl font-semibold">Novio</h3>
         <p class="text-lg"><strong>Nombre:</strong> {{ novioNombre }}</p>
         <p class="text-lg"><strong>Teléfono:</strong> {{ novioTelefono }}</p>
-        <p class="text-lg"><strong>Email:</strong> {{ novioEmail }}</p>
+        <p class="text-lg"><strong>Email:</strong> <span class="email-text">{{ novioEmail }}</span></p>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ const novioTelefono = import.meta.env.VITE_NOVIO_TELEFONO;
 const novioEmail = import.meta.env.VITE_NOVIO_EMAIL;
 </script>
 
-<style>
+<style scoped>
 .font-custom {
   font-family: 'Great Vibes', cursive;
 }
@@ -48,5 +48,41 @@ const novioEmail = import.meta.env.VITE_NOVIO_EMAIL;
 
 .animate-fade-slide {
   animation: fade-slide 1s ease-out;
+}
+
+/* Estilo para los correos electrónicos */
+.email-text {
+  word-wrap: break-word;
+  /* Permite que el correo electrónico se ajuste y no se salga del contenedor */
+  white-space: nowrap;
+  /* Evita que se dividan palabras o emails en varias líneas */
+  overflow-wrap: break-word;
+  /* Ayuda en caso de palabras largas o emails largos */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+
+  /* Reducir tamaño de fuente para pantallas pequeñas */
+  .text-lg {
+    font-size: 1rem;
+    /* Reducir tamaño para móviles */
+  }
+
+  /* Ajustar el título principal */
+  h1 {
+    font-size: 2rem;
+    /* Reducir el tamaño del título en móviles */
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    /* Reducir el tamaño del subtítulo */
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    /* Reducir el tamaño de los encabezados secundarios */
+  }
 }
 </style>
