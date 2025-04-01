@@ -1,15 +1,27 @@
 <template>
-  <div class="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6">
+  <div
+    class="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 bg-cover bg-center bg-fixed">
+
+    <!-- Imágenes distribuidas de forma estética a los lados -->
+    <div class="absolute inset-0 z-0">
+      <div v-for="(image, index) in images" :key="index" class="absolute" :style="getImageStyle(index)">
+        <img :src="image" alt="Imagen" class="object-cover rounded-xl shadow-lg">
+      </div>
+    </div>
+
     <!-- Contenido principal -->
     <div class="relative z-10 animate-fade-in">
-      <h1 class="text-6xl md:text-7xl font-extrabold text-gray-500 font-custom drop-shadow-lg animate-fade-slide">
-        ¡Nos Casamos!
-      </h1>
-      <p class="mt-4 text-2xl text-gray-500 drop-shadow-md animate-fade-slide delay-200">
-        Y queremos compartir contigo este día tan especial
-      </p>
+      <div class="relative text-container p-4 rounded-lg">
+        <h1 class="text-6xl md:text-7xl font-extrabold text-white font-custom drop-shadow-2xl animate-fade-slide">
+          ¡Nos Casamos!
+        </h1>
+        <p class="mt-4 text-2xl text-white drop-shadow-lg animate-fade-slide delay-200">
+          Y queremos compartir contigo este día tan especial
+        </p>
+      </div>
     </div>
-    <!--Confirmación de asistencia-->
+
+    <!-- Confirmación de asistencia -->
     <ConfirmAttendanceModal />
 
     <!-- Cuenta regresiva -->
@@ -18,42 +30,51 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
-const days = ref(0);
-const hours = ref(0);
-const minutes = ref(0);
-const seconds = ref(0);
+// Array de imágenes que se mostrarán sobre el fondo
+const images = [
+  '/images/img5.jpeg',
+  '/images/img6.jpeg',
+  '/images/img9.jpeg',
+  '/images/img11.jpeg',
+  '/images/img13.jpeg',
+  '/images/img15.jpeg',
+];
 
-const showModal = ref(false);
+// Función para obtener las posiciones estéticas de las imágenes
+const getImageStyle = (index) => {
+  const styles = [
+    { left: '5%', top: '5%', width: '20%', height: '20%', transform: 'rotate(-5deg)' },
+    { right: '5%', top: '5%', width: '20%', height: '20%', transform: 'rotate(5deg)' },
+    { left: '5%', top: '30%', width: '20%', height: '20%', transform: 'rotate(-10deg)' },
+    { right: '5%', top: '30%', width: '20%', height: '20%', transform: 'rotate(10deg)' },
+    { left: '5%', bottom: '15%', width: '20%', height: '20%', transform: 'rotate(5deg)' },
+    { right: '5%', bottom: '15%', width: '20%', height: '20%', transform: 'rotate(-5deg)' },
+    { left: '10%', top: '20%', width: '20%', height: '20%', transform: 'rotate(0deg)' },
+    { right: '10%', top: '20%', width: '20%', height: '20%', transform: 'rotate(0deg)' },
+    { left: '15%', bottom: '10%', width: '20%', height: '20%', transform: 'rotate(-5deg)' },
+    { right: '15%', bottom: '10%', width: '20%', height: '20%', transform: 'rotate(5deg)' },
+  ];
 
-onMounted(() => {
-  const weddingDate = new Date('2025-11-22T11:30:00');
-
-  const updateCountdown = () => {
-    const now = new Date();
-    const diff = weddingDate - now;
-
-    if (diff <= 0) {
-      days.value = 0;
-      hours.value = 0;
-      minutes.value = 0;
-      seconds.value = 0;
-      return;
-    }
-
-    days.value = Math.floor(diff / (1000 * 60 * 60 * 24));
-    hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    minutes.value = Math.floor((diff / (1000 * 60)) % 60);
-    seconds.value = Math.floor((diff / 1000) % 60);
-  };
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-});
+  return styles[index % styles.length];
+};
 </script>
 
-<style>
+<style scoped>
+/* Fondo principal */
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
 /* Animaciones */
 @keyframes fade-in {
   from {
@@ -91,4 +112,61 @@ onMounted(() => {
   animation: fade-slide 1s ease-out;
 }
 
+/* Estilo de las imágenes flotantes */
+img {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.9;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Mejorar visibilidad de los textos */
+h1,
+p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsividad: ajustar las imágenes en pantallas pequeñas */
+@media (max-width: 768px) {
+
+  /* Mostrar solo algunas imágenes en pantallas móviles (3 primeras imágenes) */
+  .absolute:nth-child(n+5) {
+    display: none;
+  }
+
+  /* Aumentar el tamaño de las imágenes en pantallas móviles */
+  img {
+    width: auto;
+    height: auto;
+    opacity: 0.9;
+  }
+
+  .absolute {
+    width: auto;
+    height: auto;
+  }
+
+  /* Fondo oscuro semitransparente y desenfoque detrás del texto */
+  .text-container {
+    /* Desenfoque del fondo */
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  /* Mejorar visibilidad del texto */
+  h1,
+  p {
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  }
+
+}
 </style>

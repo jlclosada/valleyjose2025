@@ -25,7 +25,6 @@
       class="mt-8 px-8 py-4 bg-gradient-to-r from-green-500 to-green-700 text-white font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
       📅 Añadir a Google Calendar
     </a>
-
   </div>
 
   <!-- Mapa Interactivo -->
