@@ -35,6 +35,91 @@
         📍 Abrir en Google Maps
       </a>
     </div>
+    <!-- Sección sobre Cortijo El Esparragal -->
+    <div
+      class="mt-12 w-full max-w-4xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
+      <h2 class="text-3xl font-bold mt-4">La Magia de un Cortijo Andaluz: Cortijo El Esparragal</h2>
+
+      <div class="mt-6 flex flex-col md:flex-row gap-6">
+        <div class="w-full md:w-1/2">
+          <img src="/assets/images/esparragal.jpg" alt="Cortijo El Esparragal"
+            class="w-full h-auto rounded-xl shadow-lg object-cover">
+        </div>
+        <div class="w-full md:w-1/2">
+          <p class="text-lg">
+            Cortijo El Esparragal es un lugar lleno de historia y encanto, ubicado sobre antiguos terrenos que una vez
+            fueron parte de un asentamiento romano. Esta finca ha sido testigo de la evolución de la región, desde su
+            origen en tiempos tartésicos hasta convertirse en un referente para bodas y eventos.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="text-2xl font-semibold">Historia y Origen</h3>
+        <p class="mt-3 text-lg">
+          El Cortijo El Esparragal se asienta sobre lo que fue un antiguo asentamiento romano, originado por un
+          castrejón tartésico que controlaba estas tierras. Esta zona fue un importante punto de paso entre Itálica y
+          Emérita Augusta, y también servía como una de las principales atalayas para las rutas comerciales que
+          conectaban la zona minera de Riotinto (Huelva) con el valle del Guadalquivir.
+        </p>
+        <p class="mt-3 text-lg">
+          Como vestigios de esa presencia romana, se pueden apreciar fragmentos de una muralla que corona el cerro, así
+          como algunas habitaciones de un edificio romano que incluyen restos de hornos de calefacción y muros
+          recubiertos con cal hidráulica, indicativos de unas termas que se alimentaban de un manantial cercano.
+        </p>
+      </div>
+
+      <div class="mt-6 flex flex-col md:flex-row gap-6">
+        <div class="w-full md:w-1/2">
+          <img src="/assets/images/patio.jpg" alt="Restos romanos en Cortijo El Esparragal"
+            class="w-full h-auto rounded-xl shadow-lg object-cover">
+        </div>
+        <div class="w-full md:w-1/2">
+          <p class="text-lg">
+            Los vestigios de la época romana se mantienen en este enclave histórico, proporcionando un ambiente único
+            que mezcla la antigüedad con la modernidad. Las termas y otros restos son testimonio de la importancia
+            histórica del lugar.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="text-2xl font-semibold">La Historia del Cortijo</h3>
+        <p class="mt-3 text-lg">
+          Tras la Reconquista, el rey Juan II otorgó la jurisdicción del lugar a Don Fernando Medina. Con el tiempo, la
+          finca fue adquirida por la Orden de los Jerónimos en el siglo XVII, quienes establecieron un convento y
+          construyeron una capilla dedicada a la Virgen de Belén. Este convento fue el núcleo del actual cortijo.
+        </p>
+        <p class="mt-3 text-lg">
+          Tras la desamortización de Mendizábal, el cortijo pasó por diversos propietarios hasta que en 1851, la familia
+          Vázquez lo adquirió y construyó el cortijo señorial. En 1967, la familia Oriol tomó posesión del cortijo,
+          restaurando cuidadosamente el edificio mientras mantenían la capilla y los patios del convento.
+        </p>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="text-2xl font-semibold">Una Finca Única</h3>
+        <p class="mt-3 text-lg">
+          Cortijo El Esparragal abarca más de 2.700 hectáreas de terreno, dividido en tres grandes áreas: una zona de
+          olivar y tierras de labranza, una extensión de bosque mediterráneo dedicada a la caza mayor, y una dehesa con
+          encinas y alcornoques, hogar de la raza de vaca retinta, originaria de los toros salvajes andaluces.
+        </p>
+        <p class="mt-3 text-lg">
+          El cortijo también cuenta con un embalse, construido por el Marqués de Casa Oriol, que tiene una capacidad de
+          dos millones de metros cúbicos de agua. Este embalse es crucial para el riego y contribuye a mantener el
+          ecosistema de fauna silvestre en la finca.
+        </p>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="text-2xl font-semibold">El Cortijo Hoy</h3>
+        <p class="mt-3 text-lg">
+          Hoy en día, Cortijo El Esparragal es un lugar ideal para la celebración de bodas y eventos. Con sus amplias
+          instalaciones y su entorno natural, ofrece diversos espacios exteriores e interiores para hacer de cualquier
+          celebración un evento único e inolvidable.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
