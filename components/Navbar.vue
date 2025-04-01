@@ -4,7 +4,7 @@
     <div class="container mx-auto flex justify-between items-center px-6">
       <!-- Logo / Título -->
       <a href="/" class="text-4xl md:text-4xl font-extrabold tracking-wide flex items-center gap-2 font-custom
-        relative text-blue-900 hover:scale-110 transition-all duration-300 animate-shimmer">
+        relative text-blue-900 hover:scale-110 transition-all duration-300">
         Valle & Jose Luis
       </a>
 
@@ -128,28 +128,5 @@ onUnmounted(() => {
 .slide-fade-leave-to {
   transform: translateY(-10px);
   opacity: 0;
-}
-@keyframes shimmer {
-  0% {
-    color: #17327c;
-    text-shadow: 0px 0px 5px rgba(6, 6, 6, 0.2),
-      0px 0px 10px rgba(221, 225, 237, 0.2);
-  }
-
-  50% {
-    color: #3350b9;
-    text-shadow: 0px 0px 10px rgba(223, 214, 214, 0.4),
-      0px 0px 20px rgba(5, 14, 39, 0.4);
-  }
-
-  100% {
-    color: #1e3a8a;
-    text-shadow: 0px 0px 5px rgba(241, 235, 235, 0.2),
-      0px 0px 10px rgba(30, 58, 138, 0.2);
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite alternate ease-in-out;
 }
 </style>
