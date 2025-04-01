@@ -12,7 +12,7 @@
     <!-- Contenido principal -->
     <div class="relative z-10 animate-fade-in">
       <div class="relative text-container p-4 rounded-lg">
-        <h1 class="text-6xl md:text-7xl font-extrabold text-white font-custom drop-shadow-2xl animate-fade-slide">
+        <h1 class="text-6xl md:text-7xl font-extrabold text-gray-100 font-custom drop-shadow-2xl animate-fade-slide">
           ¡Nos Casamos!
         </h1>
         <p class="mt-4 text-2xl text-white drop-shadow-lg animate-fade-slide delay-200">

@@ -21,7 +21,7 @@
 
       <div class="mt-6">
         <p class="text-lg font-semibold">Titular de la cuenta:</p>
-        <p class="text-lg">Valle Hinojosa Herrera</p>
+        <p class="text-lg"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u> (tu decides)</p>
       </div>
 
       <!-- IBAN con botón de copiar y tooltip -->
@@ -52,14 +52,14 @@
         <p class="text-lg">BBVA</p>
       </div>
 
-      <div class="mt-6">
+      <!-- <div class="mt-6">
         <p class="text-lg font-semibold">SWIFT/BIC:</p>
         <p class="text-lg">XYZBESMM</p>
-      </div>
+      </div> -->
 
       <div class="mt-6">
         <p class="text-lg">
-          Puedes poner <b>"Regalo de Boda + tu nombre"</b> como concepto para que podamos agradecerte personalmente.
+          Puedes poner <b>"Regalo de Boda + tu nombre"</b> como concepto para que podamos agradecertelo personalmente.
         </p>
       </div>
 
