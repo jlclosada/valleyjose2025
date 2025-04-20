@@ -13,7 +13,7 @@
 
     <!-- Móvil: solo una imagen -->
     <div v-else class="absolute inset-0 z-0">
-      <img :src="images[0]" alt="Imagen fondo móvil" class="w-full h-full object-cover opacity-70" />
+      <img :src="images[0]" alt="Imagen fondo móvil" class="w-full h-full object-cover opacity" />
     </div>
 
     <!-- Confirmación de asistencia -->
@@ -113,7 +113,7 @@ const images = [
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
-  opacity: 0;
+  opacity: 1;
   transition: 0.5s ease;
   border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
