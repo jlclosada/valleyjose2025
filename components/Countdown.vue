@@ -173,7 +173,7 @@ onMounted(() => {
     height: 100px;
   }
   .time {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -186,7 +186,7 @@ onMounted(() => {
     height: 85px;
   }
   .time {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
   }
   .label {
     font-size: 0.65rem;

@@ -2,7 +2,7 @@
   <div class="relative w-full min-h-screen flex flex-col items-center text-center px-6 pt-24">
     <!-- Título de la Página -->
     <div class="relative z-10 mt-10 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
-      <h1 class="text-5xl md:text-6xl font-miller font-custom drop-shadow-lg animate-fade-slide">
+      <h1 class="text-5xl md:text-6xl font-miller drop-shadow-lg animate-fade-slide">
         ¿Cómo Realizar un Regalo?
       </h1>
     </div>
@@ -10,7 +10,7 @@
     <!-- Información sobre el regalo -->
     <div
       class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-      <h2 class="text-3xl mt-4">Cuenta Bancaria para Transferencias</h2>
+      <h2 class="text-3xl mt-4 font-miller">Cuenta Bancaria para Transferencias</h2>
 
       <p class="mt-4 text-lg font-light">
         Nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sí, el regalo de siempre, pero es lo que
@@ -20,8 +20,8 @@
       </p>
 
       <div class="mt-6">
-        <p class="text-lg font-semibold">Titular de la cuenta:</p>
-        <p class="text-lg"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u> (tú decides)</p>
+        <p class="text-lg font-miller-600">Titular de la cuenta:</p>
+        <p class="text-lg font-miller"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u> (tú decides)</p>
       </div>
 
       <!-- IBAN con botón de copiar y tooltip -->
@@ -48,8 +48,8 @@
       </div>
 
       <div class="mt-6">
-        <p class="text-lg font-semibold">Entidad:</p>
-        <p class="text-lg">BBVA</p>
+        <p class="text-lg font-miller"><b>Entidad:</b></p>
+        <p class="text-lg font-miller">BBVA</p>
       </div>
 
       <!-- <div class="mt-6">

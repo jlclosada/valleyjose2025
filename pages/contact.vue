@@ -1,27 +1,27 @@
 <template>
   <div class="relative w-full min-h-screen flex flex-col items-center text-center pt-24">
     <div class="relative z-10 mt-2 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
-      <h1 class="text-5xl md:text-6xl font-miller font-custom drop-shadow-lg animate-fade-slide">
+      <h1 class="text-5xl md:text-6xl font-miller drop-shadow-lg animate-fade-slide">
         Contacto
       </h1>
     </div>
 
     <div
       class="mt-2 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700">
-      <h2 class="text-3xl font-bold">Información de Contacto</h2>
+      <h2 class="text-3xl font-miller">Información de Contacto</h2>
 
       <div class="mt-6 text-left">
-        <h3 class="text-2xl font-semibold">Novia</h3>
-        <p class="text-lg"><strong>Nombre:</strong> {{ noviaNombre }}</p>
-        <p class="text-lg"><strong>Teléfono:</strong> {{ noviaTelefono }}</p>
-        <p class="text-lg"><strong>Email:</strong> <span class="email-text">{{ noviaEmail }}</span></p>
+        <h3 class="text-2xl font-miller">Novia</h3>
+        <p class="text-lg font-miller"><strong class="font-miller">Nombre:</strong> {{ noviaNombre }}</p>
+        <p class="text-lg font-miller"><strong class="font-miller">Teléfono:</strong> {{ noviaTelefono }}</p>
+        <p class="text-lg font-miller"><strong class="font-miller">Email:</strong> <span class="email-text">{{ noviaEmail }}</span></p>
       </div>
 
       <div class="mt-6 text-left">
-        <h3 class="text-2xl font-semibold">Novio</h3>
-        <p class="text-lg"><strong>Nombre:</strong> {{ novioNombre }}</p>
-        <p class="text-lg"><strong>Teléfono:</strong> {{ novioTelefono }}</p>
-        <p class="text-lg"><strong>Email:</strong> <span class="email-text">{{ novioEmail }}</span></p>
+        <h3 class="text-2xl font-miller">Novio</h3>
+        <p class="text-lg font-miller"><strong class="font-miller">Nombre:</strong> {{ novioNombre }}</p>
+        <p class="text-lg font-miller"><strong class="font-miller">Teléfono:</strong> {{ novioTelefono }}</p>
+        <p class="text-lg font-miller"><strong class="font-miller">Email:</strong> <span class="email-text">{{ novioEmail }}</span></p>
       </div>
     </div>
   </div>
