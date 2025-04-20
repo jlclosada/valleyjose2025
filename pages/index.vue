@@ -113,7 +113,7 @@ const images = [
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
-  opacity: 0.;
+  opacity: 0;
   transition: 0.5s ease;
   border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
