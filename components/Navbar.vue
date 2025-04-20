@@ -5,7 +5,7 @@
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-2">
           <span class="text-3xl font-miller bold text-black">V&J |</span>
-          <span class="mt-1 md:inline text-gray-700 text-2xl font-miller font-custom"> 22.11.2025</span>
+          <span class="mt-1 md:inline text-black text-2xl font-miller"> 22.11.2025</span>
         </a>
 
         <!-- Menú Desktop -->
@@ -14,18 +14,18 @@
             v-for="item in navItems" 
             :key="item.path"
             :href="item.path"
-            class="group relative text-xl font-medium text-gray-800 hover:text-indigo-900 transition-colors"
+            class="group relative text-xl font-miller text-gray-800 hover:text-[#54335a] transition-colors transform hover:scale-105 cursor-pointer"
           >
             {{ item.label }}
             <!-- Línea de subrayado animada -->
-            <span class="absolute left-0 -bottom-1 h-0.5 bg-indigo-900 w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+            <span class="absolute left-0 -bottom-1 h-0.5 bg-[#54335a] w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
           </a>
         </div>
 
         <!-- Botón Menú Móvil -->
         <button 
           @click="toggleMenu"
-          class="lg:hidden p-2 rounded-md text-gray-700 focus:outline-none"
+          class="lg:hidden p-2 rounded-md text-gray-700 focus:outline-none cursor-pointer"
           aria-label="Menú"
         >
           <svg 
@@ -65,11 +65,11 @@
             :key="item.path"
             :href="item.path"
             @click="toggleMenu"
-            class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-colors"
+            class="block px-4 py-3 text-lg font-miller text-gray-700 hover:text-[#54335a] hover:bg-gray-50 rounded-lg transition-colors transform hover:scale-105 cursor-pointer"
           >
             {{ item.label }}
           </a>
-          <div class="pt-4 pb-2 text-center text-sm text-gray-500">
+          <div class="pt-4 pb-2 text-center text-sm text-gray-500 font-miller">
             Valle & José Luis · 2025
           </div>
         </div>
@@ -112,3 +112,21 @@ onUnmounted(() => {
   document.body.style.overflow = '';
 });
 </script>
+
+<style scoped>
+/* Efecto de hover en el menú */
+.group:hover {
+  transform: scale(1.05); /* Añade escala al hacer hover en el menú */
+  transition: transform 0.3s ease-in-out; /* Asegura que la escala sea suave */
+}
+
+/* Línea de subrayado */
+.group .absolute {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Cursor pointer para el menú móvil */
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>

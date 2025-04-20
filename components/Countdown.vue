@@ -81,8 +81,8 @@ onMounted(() => {
 
 .countdown-circle {
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -169,11 +169,11 @@ onMounted(() => {
 /* Responsividad */
 @media (max-width: 768px) {
   .countdown-circle {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
   .time {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -182,8 +182,8 @@ onMounted(() => {
     gap: 8px;
   }
   .countdown-circle {
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
   }
   .time {
     font-size: 1.6rem;

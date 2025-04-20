@@ -2,7 +2,7 @@
   <div class="relative w-full min-h-screen flex flex-col items-center text-center pt-6">
     <!-- Contenido principal -->
     <div class="relative z-10 mt-10 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
-      <h1 class="text-5xl md:text-6xl font-miller font-custom drop-shadow-lg animate-fade-slide">
+      <h1 class="text-5xl md:text-6xl font-miller drop-shadow-lg animate-fade-slide">
         Cortijo El Esparragal
       </h1>
     </div>
@@ -15,10 +15,10 @@
     <!-- Detalles de la Ceremonia -->
     <div
       class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left">
-      <h2 class="text-3xl">Detalles de la celebración</h2>
-      <p class="mt-3 text-lg font-light">📍 <strong>Cortijo El Esparragal, Gerena, Sevilla</strong></p>
-      <p class="text-lg mt-3 font-light">📅 <strong>22 de Noviembre de 2025</strong></p>
-      <p class="text-lg mt-3">⏰ <strong>13:30</strong></p>
+      <h2 class="text-3xl font-miller">Detalles de la celebración</h2>
+      <p class="mt-3 text-lg font-light">📍 <strong class="font-miller">Cortijo El Esparragal, Gerena, Sevilla</strong></p>
+      <p class="text-lg mt-3 font-light">📅 <strong class="font-miller">22 de Noviembre de 2025</strong></p>
+      <p class="text-lg mt-3">⏰ <strong class="font-miller">13:30</strong></p>
     </div>
 
     <!-- Mapa Interactivo -->
@@ -31,14 +31,14 @@
     <!-- Botones de Acción -->
     <div class="mt-6 flex flex-col md:flex-row justify-center gap-6 animate-fade-in">
       <a href="https://maps.app.goo.gl/SHt8dZZCAFqFkz17A" target="_blank"
-        class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-light rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
+        class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-miller rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
         📍 Abrir en Google Maps
       </a>
     </div>
     <!-- Sección sobre Cortijo El Esparragal -->
     <div
       class="mt-12 w-full max-w-4xl bg-white/80 backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-      <h2 class="text-3xl font-bold mt-4">La Magia de un Cortijo Andaluz: Cortijo El Esparragal</h2>
+      <h2 class="text-3xl font-miller mt-4">La Magia de un Cortijo Andaluz: Cortijo El Esparragal</h2>
 
       <div class="mt-6 flex flex-col md:flex-row gap-6">
         <div class="w-full md:w-1/2">
@@ -55,7 +55,7 @@
       </div>
 
       <div class="mt-6">
-        <h3 class="text-2xl">Historia y Origen</h3>
+        <h3 class="text-2xl font-miller">Historia y Origen</h3>
         <p class="mt-3 text-m font-light">
           El Cortijo El Esparragal se asienta sobre lo que fue un antiguo asentamiento romano, originado por un
           castrejón tartésico que controlaba estas tierras. Esta zona fue un importante punto de paso entre Itálica y
@@ -84,7 +84,7 @@
       </div>
 
       <div class="mt-6">
-        <h3 class="text-2xl font-semibold">La Historia del Cortijo</h3>
+        <h3 class="text-2xl font-miller">La Historia del Cortijo</h3>
         <p class="mt-3 text-m font-light">
           Tras la Reconquista, el rey Juan II otorgó la jurisdicción del lugar a Don Fernando Medina. Con el tiempo, la
           finca fue adquirida por la Orden de los Jerónimos en el siglo XVII, quienes establecieron un convento y
@@ -98,7 +98,7 @@
       </div>
 
       <div class="mt-6">
-        <h3 class="text-2xl font-semibold">Una Finca Única</h3>
+        <h3 class="text-2xl font-miller">Una Finca Única</h3>
         <p class="mt-3 text-m font-light">
           Cortijo El Esparragal abarca más de 2.700 hectáreas de terreno, dividido en tres grandes áreas: una zona de
           olivar y tierras de labranza, una extensión de bosque mediterráneo dedicada a la caza mayor, y una dehesa con

@@ -2,7 +2,7 @@
   <div class="relative w-full min-h-screen flex flex-col items-center text-center pt-6">
     <!-- Contenido principal -->
     <div class="relative z-10 mt-10 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
-      <h1 class="text-5xl md:text-6xl font-miller font-custom drop-shadow-lg animate-fade-slide">
+      <h1 class="text-5xl md:text-6xl font-miller drop-shadow-lg animate-fade-slide">
         Real Parroquia de Señora Santa Ana
       </h1>
     </div>
@@ -15,14 +15,14 @@
     <!-- Detalles de la Ceremonia -->
     <div
       class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-      <h2 class="text-3xl font-bold mt-4">Detalles de la Ceremonia</h2>
-      <p class="mt-3 text-lg">📍 <strong>Real Parroquia de Señora Santa Ana, Sevilla</strong></p>
-      <p class="text-lg mt-3">📅 <strong>22 de Noviembre de 2025</strong></p>
-      <p class="text-lg mt-3">⏰ <strong>11:30 AM</strong></p>
+      <h2 class="text-3xl font-miller mt-4">Detalles de la Ceremonia</h2>
+      <p class="mt-3 text-lg font-miller">📍 <strong class="font-miller">Real Parroquia de Señora Santa Ana, Sevilla</strong></p>
+      <p class="text-lg mt-3 font-miller">📅 <strong class="font-miller">22 de Noviembre de 2025</strong></p>
+      <p class="text-lg mt-3">⏰ <strong class="font-miller">11:30 AM</strong></p>
     </div>
     <a target="_blank"
       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Valle+%26+Jose+Luis&dates=20251122T103000Z/20251122T120000Z&details=Acompáñanos+en+nuestra+ceremonia+religiosa+en+la+Real+Parroquia+de+Señora+Santa+Ana&location=Real+Parroquia+de+Señora+Santa+Ana&sf=true&output=xml"
-      class="mt-8 px-8 py-4 bg-gradient-to-r from-green-500 to-green-700 text-white font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
+      class="mt-8 px-8 py-4 bg-gradient-to-r from-orange-100 to-white-200 text-black font-miller font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
       📅 Añadir a Google Calendar
     </a>
   </div>
@@ -37,14 +37,14 @@
   <!-- Botones de Acción -->
   <div class="mt-6 flex flex-col md:flex-row justify-center gap-6 animate-fade-in">
     <a href="https://maps.app.goo.gl/Z84XY6usHn9onaBv8" target="_blank"
-      class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
+      class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-miller font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
       📍 Abrir en Google Maps
     </a>
   </div>
   <!-- Información sobre la Parroquia -->
   <div
     class="mt-12 w-full max-w-4xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-    <h2 class="text-3xl font-bold mt-4">La Real Parroquia de Santa Ana</h2>
+    <h2 class="text-3xl font-miller mt-4">La Real Parroquia de Santa Ana</h2>
 
     <div class="mt-6 flex flex-col md:flex-row gap-6">
       <div class="w-full md:w-1/2">
@@ -62,7 +62,7 @@
     </div>
 
     <div class="mt-6">
-      <h3 class="text-2xl font-semibold">Orígenes e Historia</h3>
+      <h3 class="text-2xl font-miller">Orígenes e Historia</h3>
       <p class="mt-3 text-m font-light">
         El castillo de San Jorge, situado junto al río Guadalquivir y el puente de barcas, fue el punto de control de
         las entradas occidentales a Sevilla durante la época musulmana. Este castillo fue la sede de una pequeña
@@ -78,7 +78,7 @@
     </div>
 
     <div class="mt-6">
-      <h3 class="text-2xl font-semibold">Arquitectura y Estilo</h3>
+      <h3 class="text-2xl font-miller">Arquitectura y Estilo</h3>
       <p class="mt-3 text-m font-light">
         La Real Parroquia de Santa Ana es un claro ejemplo de la fusión de estilos góticos y mudéjares, con detalles de
         ladrillo y azulejos característicos de la época. Su construcción fue influenciada tanto por las tradiciones
@@ -106,7 +106,7 @@
     </div>
 
     <div class="mt-6">
-      <h3 class="text-2xl font-semibold">Restauración y Reconstrucción</h3>
+      <h3 class="text-2xl font-miller">Restauración y Reconstrucción</h3>
       <p class="mt-3 text-m font-light">
         En 1755, un devastador terremoto causó graves daños a la parroquia. La restauración del edificio fue liderada
         por Pedro de Silva, quien le dio un estilo barroco al templo que aún permanece hoy en día. A mediados del siglo
@@ -116,7 +116,7 @@
     </div>
 
     <div class="mt-6">
-      <h3 class="text-2xl font-semibold">Festividades y Procesiones</h3>
+      <h3 class="text-2xl font-miller">Festividades y Procesiones</h3>
       <p class="mt-3 text-m font-light">
         La parroquia de Santa Ana ha sido un centro importante para las festividades religiosas del barrio de Triana.
         Entre sus celebraciones más destacadas se encuentran el Corpus Christi, celebrado desde el siglo XVI, y la
@@ -127,7 +127,7 @@
     </div>
 
     <div class="mt-6">
-      <h3 class="text-2xl font-semibold">Patrimonio Cultural</h3>
+      <h3 class="text-2xl font-miller">Patrimonio Cultural</h3>
       <p class="mt-3 text-m font-light">
         La Real Parroquia de Santa Ana fue declarada monumento de interés cultural en 1931 y continúa siendo un
         referente de la arquitectura sevillana. Hoy en día, la iglesia no solo sirve como un lugar de culto, sino
