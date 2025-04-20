@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col items-center text-center pt-24">
     <div class="max-w-4xl w-full bg-white p-8 rounded-3xl shadow-lg border border-gray-200">
-      <h1 class="text-5xl md:text-6xl font-extrabold font-custom text-blue-900 mb-6">
+      <h1 class="text-5xl md:text-6xl font-miller font-custom text-black mb-6">
         Preguntas Frecuentes
       </h1>
 
@@ -15,7 +15,7 @@
             </span>
           </button>
           <transition name="fade">
-            <p v-if="faq.abierto" class="text-gray-600 text-m px-2 pb-4 text-left" v-html="faq.respuesta">
+            <p v-if="faq.abierto" class="text-gray-600 text-m px-2 pb-4 text-left font-light" v-html="faq.respuesta">
             </p>
           </transition>
         </div>

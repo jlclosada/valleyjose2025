@@ -2,7 +2,7 @@
   <div class="relative w-full min-h-screen flex flex-col items-center text-center px-6 pt-24">
     <!-- Título de la Página -->
     <div class="relative z-10 mt-10 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
-      <h1 class="text-5xl md:text-6xl font-extrabold font-custom drop-shadow-lg animate-fade-slide">
+      <h1 class="text-5xl md:text-6xl font-miller font-custom drop-shadow-lg animate-fade-slide">
         ¿Cómo Realizar un Regalo?
       </h1>
     </div>
@@ -10,9 +10,9 @@
     <!-- Información sobre el regalo -->
     <div
       class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-      <h2 class="text-3xl font-bold mt-4">Cuenta Bancaria para Transferencias</h2>
+      <h2 class="text-3xl mt-4">Cuenta Bancaria para Transferencias</h2>
 
-      <p class="mt-4 text-lg">
+      <p class="mt-4 text-lg font-light">
         Nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sí, el regalo de siempre, pero es lo que
         más nos ayudaría.<br><br>
         Sin embargo, si prefieres hacer un regalo más personal o directamente darnos un abrazo, lo aceptaremos
@@ -21,7 +21,7 @@
 
       <div class="mt-6">
         <p class="text-lg font-semibold">Titular de la cuenta:</p>
-        <p class="text-lg"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u> (tu decides)</p>
+        <p class="text-lg"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u> (tú decides)</p>
       </div>
 
       <!-- IBAN con botón de copiar y tooltip -->
@@ -58,20 +58,20 @@
       </div> -->
 
       <div class="mt-6">
-        <p class="text-lg">
-          Puedes poner <b>"Regalo de Boda + tu nombre"</b> como concepto para que podamos agradecertelo personalmente.
+        <p class="text-lg font-light">
+          Puedes poner <b>"Regalo de Boda + tu nombre"</b> como concepto para que podamos agradecértelo personalmente.
         </p>
       </div>
 
       <div class="mt-6">
-        <p class="text-lg">¡Te lo agradecemos mucho!</p>
+        <p class="text-lg font-light">¡Te lo agradecemos mucho!</p>
       </div>
     </div>
 
     <!-- Botón de contacto -->
     <div class="mt-8 flex flex-col md:flex-row justify-center gap-6 animate-fade-in">
       <a href="mailto:jlcaclosada@gmail.com,vallehinojosa95@gmail.com"
-        class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
+        class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-light rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
         📩 Contactar con Nosotros
       </a>
     </div>

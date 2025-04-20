@@ -1,45 +1,78 @@
 <template>
-  <nav
-    class="backdrop-blur-lg bg-white/60 shadow-md py-4 fixed w-full top-0 z-50 transition-all duration-500 border-b border-blue-300/30">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <!-- Logo / Título -->
-      <a href="/" class="text-4xl md:text-4xl font-extrabold tracking-wide flex items-center gap-2 font-custom
-        relative text-blue-900 hover:scale-110 transition-all duration-300">
-        Valle & Jose Luis
-      </a>
+  <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <span class="text-3xl font-miller bold text-black">V&J |</span>
+          <span class="mt-1 md:inline text-gray-700 text-2xl font-miller font-custom"> 22.11.2025</span>
+        </a>
 
-      <!-- Botón Menú Móvil -->
-      <button @click.stop="toggleMenu" ref="menuButton"
-        class="lg:hidden text-blue-900 focus:outline-none cursor-pointer">
-        <svg class="w-8 h-8 transition-transform duration-300" :class="{ 'rotate-90': menuOpen }" fill="none"
-          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
+        <!-- Menú Desktop -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a 
+            v-for="item in navItems" 
+            :key="item.path"
+            :href="item.path"
+            class="group relative text-xl font-medium text-gray-800 hover:text-indigo-900 transition-colors"
+          >
+            {{ item.label }}
+            <!-- Línea de subrayado animada -->
+            <span class="absolute left-0 -bottom-1 h-0.5 bg-indigo-900 w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+          </a>
+        </div>
 
-      <!-- Menú para pantallas grandes -->
-      <ul class="hidden lg:flex space-x-10 text-lg font-medium">
-        <li><a href="/" class="nav-link">Inicio</a></li>
-        <li><a href="/ceremonia" class="nav-link">Ceremonia</a></li>
-        <li><a href="/celebracion" class="nav-link">Celebración</a></li>
-        <li><a href="/contact" class="nav-link">Contacto</a></li>
-        <li><a href="/faq" class="nav-link">FAQ</a></li>
-        <li><a href="/gifts" class="nav-link">Regalos</a></li>
-      </ul>
+        <!-- Botón Menú Móvil -->
+        <button 
+          @click="toggleMenu"
+          class="lg:hidden p-2 rounded-md text-gray-700 focus:outline-none"
+          aria-label="Menú"
+        >
+          <svg 
+            class="w-6 h-6 transition-transform duration-200" 
+            :class="{ 'rotate-90': menuOpen }"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Menú Móvil Desplegable -->
-    <transition name="slide-fade">
-      <div v-if="menuOpen" ref="menuDropdown"
-        class="lg:hidden absolute top-full left-0 w-full bg-white/90 shadow-lg py-6 backdrop-blur-xl rounded-b-3xl transition-all duration-500 border-t border-blue-200/40 cursor-pointer">
-        <ul class="text-center text-lg font-medium space-y-6">
-          <li><a href="/" class="nav-link" @click="toggleMenu">Inicio</a></li>
-          <li><a href="/ceremonia" class="nav-link" @click="toggleMenu">Ceremonia</a></li>
-          <li><a href="/celebracion" class="nav-link" @click="toggleMenu">Celebración</a></li>
-          <li><a href="/contact" class="nav-link" @click="toggleMenu">Contacto</a></li>
-          <li><a href="/faq" class="nav-link" @click="toggleMenu">FAQ</a></li>
-          <li><a href="/gifts" class="nav-link" @click="toggleMenu">Regalos</a></li>
-        </ul>
+    <!-- Menú Móvil -->
+    <transition
+      enter-active-class="transition ease-out duration-100"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition ease-in duration-75"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div 
+        v-show="menuOpen"
+        class="lg:hidden absolute inset-x-0 z-40 bg-white shadow-lg"
+      >
+        <div class="container mx-auto px-4 py-3 space-y-4">
+          <a
+            v-for="item in navItems"
+            :key="item.path"
+            :href="item.path"
+            @click="toggleMenu"
+            class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-colors"
+          >
+            {{ item.label }}
+          </a>
+          <div class="pt-4 pb-2 text-center text-sm text-gray-500">
+            Valle & José Luis · 2025
+          </div>
+        </div>
       </div>
     </transition>
   </nav>
@@ -49,84 +82,33 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const menuOpen = ref(false);
-const menuDropdown = ref(null);
-const menuButton = ref(null);
+const navItems = [
+  { path: '/', label: 'Inicio' },
+  { path: '/ceremonia', label: 'Ceremonia' },
+  { path: '/celebracion', label: 'Celebración' },
+  { path: '/contact', label: 'Contacto' },
+  { path: '/faq', label: 'FAQ' },
+  { path: '/gifts', label: 'Regalos' }
+];
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
+  document.body.style.overflow = menuOpen.value ? 'hidden' : '';
 };
 
-// Función para cerrar el menú si se hace clic fuera de él
-const onClickOutside = (event) => {
-  if (
-    menuOpen.value &&
-    menuDropdown.value &&
-    !menuDropdown.value.contains(event.target) &&
-    !menuButton.value.contains(event.target) // Evita que se cierre si se hace clic en el botón
-  ) {
-    menuOpen.value = false;
+const handleClickOutside = (event) => {
+  const navElement = document.querySelector('nav');
+  if (menuOpen.value && !navElement.contains(event.target)) {
+    toggleMenu();
   }
 };
 
 onMounted(() => {
-  document.addEventListener("click", onClickOutside);
+  document.addEventListener('click', handleClickOutside);
 });
 
 onUnmounted(() => {
-  document.removeEventListener("click", onClickOutside);
+  document.removeEventListener('click', handleClickOutside);
+  document.body.style.overflow = '';
 });
 </script>
-
-<style>
-/* Fuente personalizada */
-.font-custom {
-  font-family: "Great Vibes", cursive;
-}
-
-/* Estilo del Link */
-.nav-link {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 4px;
-  color: #1e3a8a;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(30, 58, 138, 0.4);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-out;
-}
-
-.nav-link:hover {
-  color: #0e1a40;
-  transform: scale(1.03);
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Animaciones del Menú Móvil */
-.slide-fade-enter-active {
-  transition: all 0.4s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.3s ease-in;
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-10px);
-  opacity: 0;
-}
-</style>

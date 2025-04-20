@@ -1,24 +1,19 @@
 <template>
-  <div
-    class="relative w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed">
+  <div class="relative w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed">
 
-    <!-- Imágenes distribuidas de forma estética a los lados -->
-    <div class="absolute inset-0 z-0">
-      <div v-for="(image, index) in images" :key="index" class="absolute" :style="getImageStyle(index)">
-        <img :src="image" alt="Imagen" class="object-cover rounded-xl shadow-lg">
-      </div>
+    <!-- Desktop: galería completa -->
+    <div v-if="!isMobile" class="section absolute inset-0 z-0">
+      <img
+        v-for="(image, index) in images"
+        :key="index"
+        :src="image"
+        alt="Imagen"
+      />
     </div>
 
-    <!-- Contenido principal -->
-    <div class="relative z-10 animate-fade-in">
-      <div class="relative text-container p-4 rounded-lg">
-        <h1 class="text-6xl md:text-7xl font-extrabold text-gray-100 font-custom drop-shadow-2xl animate-fade-slide">
-          ¡Nos Casamos!
-        </h1>
-        <p class="mt-4 text-2xl text-white drop-shadow-lg animate-fade-slide delay-200">
-          Y queremos compartir contigo este día tan especial
-        </p>
-      </div>
+    <!-- Móvil: solo una imagen -->
+    <div v-else class="absolute inset-0 z-0">
+      <img :src="images[0]" alt="Imagen fondo móvil" class="w-full h-full object-cover opacity-70" />
     </div>
 
     <!-- Confirmación de asistencia -->
@@ -29,10 +24,20 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
 
-// Array de imágenes que se mostrarán sobre el fondo
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const isMobile = ref(false)
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth < 768
+}
+
+onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
 const images = [
   '/images/img5.jpeg',
   '/images/img6.jpeg',
@@ -41,24 +46,6 @@ const images = [
   '/images/img13.jpeg',
   '/images/img15.jpeg',
 ];
-
-// Función para obtener las posiciones estéticas de las imágenes
-const getImageStyle = (index) => {
-  const styles = [
-    { left: '5%', top: '5%', width: '20%', height: '20%', transform: 'rotate(-5deg)' },
-    { right: '5%', top: '5%', width: '20%', height: '20%', transform: 'rotate(5deg)' },
-    { left: '5%', top: '30%', width: '20%', height: '20%', transform: 'rotate(-10deg)' },
-    { right: '5%', top: '30%', width: '20%', height: '20%', transform: 'rotate(10deg)' },
-    { left: '5%', bottom: '15%', width: '20%', height: '20%', transform: 'rotate(5deg)' },
-    { right: '5%', bottom: '15%', width: '20%', height: '20%', transform: 'rotate(-5deg)' },
-    { left: '10%', top: '20%', width: '20%', height: '20%', transform: 'rotate(0deg)' },
-    { right: '10%', top: '20%', width: '20%', height: '20%', transform: 'rotate(0deg)' },
-    { left: '15%', bottom: '10%', width: '20%', height: '20%', transform: 'rotate(-5deg)' },
-    { right: '15%', bottom: '10%', width: '20%', height: '20%', transform: 'rotate(5deg)' },
-  ];
-
-  return styles[index % styles.length];
-};
 </script>
 
 <style scoped>
@@ -112,21 +99,34 @@ const getImageStyle = (index) => {
   animation: fade-slide 1s ease-out;
 }
 
-/* Estilo de las imágenes flotantes */
-img {
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0.9;
+/* Estilo de las imágenes tipo galería expandible */
+.section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.section img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.;
+  transition: 0.5s ease;
+  border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-img:hover {
-  transform: scale(1.05);
+.section img:hover {
+  cursor: crosshair;
+  width: 300px;
   opacity: 1;
+  filter: contrast(120%);
 }
 
-/* Mejorar visibilidad de los textos */
-h1,
-p {
+/* Texto */
+h1, p {
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
@@ -134,39 +134,150 @@ h1 {
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Responsividad: ajustar las imágenes en pantallas pequeñas */
+/* Contenedor del texto */
+.text-container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Efecto de texto con borde */
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #ffffff;
+  text-stroke: 1.5px #ffffff;
+}
+
+/* Gradiente para el texto */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #e2d1f8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(226, 209, 248, 0.3);
+}
+
+/* Animaciones personalizadas */
+@keyframes title-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitle-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline-pulse {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-1 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes float-2 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+}
+
+.animate-title {
+  animation: title-appear 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-subtitle {
+  animation: subtitle-appear 1.8s ease-out forwards;
+}
+
+.animate-underline {
+  animation: underline-pulse 3s ease-in-out infinite;
+}
+
+.animate-float-1 {
+  animation: float-1 8s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 6s ease-in-out infinite 2s;
+}
+
+/* Responsividad mejorada */
 @media (max-width: 768px) {
-
-  /* Mostrar solo algunas imágenes en pantallas móviles (3 primeras imágenes) */
-  .absolute:nth-child(n+0) {
-    display: none;
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
   }
-
-  /* Aumentar el tamaño de las imágenes en pantallas móviles */
-  img {
-    width: auto;
-    height: auto;
-    opacity: 0.9;
-  }
-
-  .absolute {
-    width: auto;
-    height: auto;
-  }
-
-  /* Fondo oscuro semitransparente y desenfoque detrás del texto */
-  .text-container {
-    /* Desenfoque del fondo */
-    border-radius: 15px;
-    padding: 20px;
-  }
-
-  /* Mejorar visibilidad del texto */
-  h1,
+  
   p {
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .text-container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    height: auto;
   }
 
+  .section img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .section img:hover {
+    width: 100%;
+    height: 250px;
+  }
 }
 </style>

@@ -1,22 +1,40 @@
 <template>
   <div class="flex justify-center items-center mt-6">
-    <div
-      class="countdown-box flex gap-12 px-12 py-6 text-center rounded-2xl bg-white/80 backdrop-blur-lg shadow-xl animate-fade-scale">
-      <div class="countdown-item">
-        <div class="time">{{ days }}</div>
-        <div class="label">Días</div>
+    <div class="countdown-container flex gap-6 md:gap-10">
+      <!-- Días -->
+      <div class="countdown-circle">
+        <div class="circle-content">
+          <div class="time">{{ days.toString().padStart(2, '0') }}</div>
+          <div class="label">Días</div>
+        </div>
+        <div class="circle-progress" :style="{ '--progress': (days / 365) * 100 }"></div>
       </div>
-      <div class="countdown-item">
-        <div class="time">{{ hours }}</div>
-        <div class="label">Horas</div>
+
+      <!-- Horas -->
+      <div class="countdown-circle">
+        <div class="circle-content">
+          <div class="time">{{ hours.toString().padStart(2, '0') }}</div>
+          <div class="label">Horas</div>
+        </div>
+        <div class="circle-progress" :style="{ '--progress': (hours / 24) * 100 }"></div>
       </div>
-      <div class="countdown-item">
-        <div class="time">{{ minutes }}</div>
-        <div class="label">Minutos</div>
+
+      <!-- Minutos -->
+      <div class="countdown-circle">
+        <div class="circle-content">
+          <div class="time">{{ minutes.toString().padStart(2, '0') }}</div>
+          <div class="label">Minutos</div>
+        </div>
+        <div class="circle-progress" :style="{ '--progress': (minutes / 60) * 100 }"></div>
       </div>
-      <div class="countdown-item">
-        <div class="time">{{ seconds }}</div>
-        <div class="label">Segundos</div>
+
+      <!-- Segundos -->
+      <div class="countdown-circle">
+        <div class="circle-content">
+          <div class="time">{{ seconds.toString().padStart(2, '0') }}</div>
+          <div class="label">Segundos</div>
+        </div>
+        <div class="circle-progress" :style="{ '--progress': (seconds / 60) * 100 }"></div>
       </div>
     </div>
   </div>
@@ -57,83 +75,121 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.countdown-box {
+.countdown-container {
+  padding: 20px;
+}
+
+.countdown-circle {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  padding: 20px 40px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Nueva animación de entrada con escala */
-@keyframes fade-scale {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.countdown-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 40px rgba(0, 0, 0, 0.15),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-.animate-fade-scale {
-  animation: fade-scale 1.5s ease-out;
+.circle-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(134, 101, 168, 0.8) calc(var(--progress, 0) * 1%),
+    transparent 0
+  );
+  mask: radial-gradient(transparent 60%, black 61%);
+  transition: background 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.countdown-item {
+.circle-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .time {
-  font-size: 4rem;
-  font-weight: bold;
-  color: rgb(28, 1, 86);
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #9A7EB0 0%, #3e1561 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.5s ease;
 }
 
 .label {
-  font-size: 1rem;
-  color: #030246;
+  font-size: 0.75rem;
+  color: #6C5B7B;
   text-transform: uppercase;
-  margin-top: 8px;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+
+/* Efecto de iluminación suave */
+.countdown-circle::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(58, 41, 41, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.countdown-circle:hover::after {
+  opacity: 1;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-  .countdown-box {
-    padding: 15px 30px;
-    gap: 20px;
+  .countdown-circle {
+    width: 90px;
+    height: 90px;
   }
-
   .time {
-    font-size: 3rem;
-  }
-
-  .label {
-    font-size: 0.875rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .countdown-box {
-    padding: 10px 20px;
-    gap: 15px;
+  .countdown-container {
+    gap: 8px;
   }
-
+  .countdown-circle {
+    width: 75px;
+    height: 75px;
+  }
   .time {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
   }
-
   .label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 }
 </style>

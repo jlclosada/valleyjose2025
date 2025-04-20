@@ -4,8 +4,11 @@
 
 /* Fuente base moderna */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Miller Display', serif;
+  margin:0;
+  padding:0;
 }
+
 
 /* Fuente elegante para títulos románticos */
 .font-great-vibes {
@@ -20,4 +23,43 @@ body {
 /* Fuente manuscrita con estilo artístico */
 .font-dancing {
   font-family: 'Dancing Script', cursive;
+}
+
+.font-miller {
+  font-family: 'Miller Display', serif;
+  font-weight: 200;
+}
+
+
+@font-face {
+  font-family: 'Miller Display';
+  src: url('../css/miller-display/fonnts.com-Miller_Display_Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'Miller Display';
+  src: url('../css/miller-display/fonnts.com-Miller_Display_Roman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Miller Display';
+  src: url('../css/miller-display/fonnts.com-Miller_Display_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Miller Display';
+  src: url('../css/miller-display/fonnts.com-Miller_Display_Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Miller Display';
+  src: url('../css/miller-display/fonnts.com-Miller_Display_Light.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
 }

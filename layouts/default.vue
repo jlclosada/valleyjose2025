@@ -2,20 +2,15 @@
   <div class="relative min-h-screen flex flex-col text-gray-900">
     <!-- Fondo animado -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-      <div class="absolute w-full h-full bg-gradient-to-br from-gray-100 via-blue-200 to-indigo-300 animate-gradient">
+      <div class="absolute w-full h-full bg-white">
       </div>
       <div class="absolute w-full h-full bg-white opacity-20 mix-blend-overlay"></div>
-
-      <!-- Partículas flotantes -->
-      <div class="absolute inset-0 pointer-events-none">
-        <span v-for="i in 50" :key="i" class="particle" :style="randomPosition()"></span>
-      </div>
     </div>
 
     <!-- Contenido principal -->
     <div class="relative z-10 flex flex-col min-h-screen">
       <Navbar />
-      <main class="flex-1 flex flex-col items-center justify-center px-6 py-12">
+      <main class="flex-1 flex flex-col items-center justify-center py-12">
         <slot />
       </main>
       <Footer />
