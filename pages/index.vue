@@ -102,6 +102,7 @@ const images = [
 /* Estilo de las imágenes tipo galería expandible */
 .section {
   display: flex;
+  min-width: 60px;
   width: 100%;
   height: 100vh;
   overflow: hidden;
