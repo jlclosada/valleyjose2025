@@ -1,11 +1,11 @@
 <template>
   <div class="relative min-h-screen flex flex-col text-gray-900">
     <!-- Fondo animado -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <div class="absolute w-full h-full bg-white">
-      </div>
-      <div class="absolute w-full h-full bg-white opacity-20 mix-blend-overlay"></div>
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="absolute w-full h-full bg-white opacity-10"></div>
+      <div class="absolute w-full h-full bg-white opacity-10 mix-blend-overlay"></div>
     </div>
+
 
     <!-- Contenido principal -->
     <div class="relative z-10 flex flex-col min-h-screen">

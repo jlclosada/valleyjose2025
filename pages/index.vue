@@ -1,30 +1,34 @@
 <template>
-  <div class="relative w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed">
+  <div class="w-full min-h-screen">
+    <!-- Fondo e imágenes -->
+    <div class="relative w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed">
+      <!-- Desktop: galería completa -->
+      <div v-if="!isMobile" class="section absolute inset-0 z-0">
+        <img
+          v-for="(image, index) in images"
+          :key="index"
+          :src="image"
+          alt="Imagen"
+        />
+      </div>
 
-    <!-- Desktop: galería completa -->
-    <div v-if="!isMobile" class="section absolute inset-0 z-0">
-      <img
-        v-for="(image, index) in images"
-        :key="index"
-        :src="image"
-        alt="Imagen"
-      />
+      <!-- Móvil: solo una imagen -->
+      <div v-else class="absolute inset-0 z-0">
+        <img :src="images[0]" alt="Imagen fondo móvil" class="w-full h-full object-cover opacity" />
+      </div>
+
+      <!-- Confirmación de asistencia -->
+      <ConfirmAttendanceModal />
+
+      <!-- Cuenta regresiva -->
+      <Countdown />
     </div>
 
-    <!-- Móvil: solo una imagen -->
-    <div v-else class="absolute inset-0 z-0">
-      <img :src="images[0]" alt="Imagen fondo móvil" class="w-full h-full object-cover opacity" />
-    </div>
-
-    <!-- Confirmación de asistencia -->
-    <ConfirmAttendanceModal />
-
-    <!-- Cuenta regresiva -->
-    <Countdown />
-    <!-- Comentarios destacados -->
+    <!-- Comentarios destacados: FUERA del bloque centrado -->
     <HighlightedComments />
   </div>
 </template>
+
 
 
 <script setup>
