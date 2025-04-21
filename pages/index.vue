@@ -21,6 +21,8 @@
 
     <!-- Cuenta regresiva -->
     <Countdown />
+    <!-- Comentarios destacados -->
+    <HighlightedComments />
   </div>
 </template>
 
