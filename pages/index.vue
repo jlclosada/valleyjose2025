@@ -20,10 +20,15 @@
       <!-- Confirmación de asistencia -->
       <ConfirmAttendanceModal />
 
+
       <!-- Cuenta regresiva -->
       <Countdown />
     </div>
-
+    
+    <!-- Trivial entre el contador y los comentarios -->
+    <div class="my-10 flex justify-center">
+      <TrivialModal />
+    </div>
     <!-- Comentarios destacados: FUERA del bloque centrado -->
     <HighlightedComments />
   </div>

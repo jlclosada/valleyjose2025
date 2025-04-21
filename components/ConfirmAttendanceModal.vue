@@ -1,10 +1,10 @@
 <template>
   <!-- Botón para abrir la modal - Versión premium -->
   <button @click="showModal = true"
-    class="modal-trigger relative overflow-hidden group mt-32 px-10 py-5 font-miller rounded-full shadow-2xl transition-all duration-500 cursor-pointer">
+    class="modal-trigger relative overflow-hidden group mt-70 px-10 py-5 font-miller rounded-full shadow-2xl transition-all duration-500 cursor-pointer">
     <span class="absolute inset-0 bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 opacity-100 group-hover:opacity-0 transition-opacity duration-500 rounded-full"></span>
     <span class="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
-    <span class="relative z-10 text-[#4f2d6d] group-hover:text-white text-xl md:text-2xl font-medium tracking-wide transition-all duration-300 font-miller">
+    <span class="relative z-10 text-[#4f2d6d] group-hover:text-white text-xl md:text-2xl font-medium tracking-wide transition-all duration-300 font-bold">
       Confirmar Asistencia
     </span>
     <span class="absolute -bottom-1 left-1/2 w-0 h-1 bg-white group-hover:w-4/5 group-hover:left-1/10 transition-all duration-500 rounded-full"></span>
