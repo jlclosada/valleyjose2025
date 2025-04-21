@@ -20,7 +20,7 @@
   const comments = [
     { text: 'Yo he puesto muy rapido que voy solo, pero este viernes en Stuk quizas conozco a alguna sueca que me robe el corazon, como puedo cambiarlo si me pasa?', author: 'Manuel V.' },
     { text: 'Que suene el dembow de PR', author: 'Javier C.' },
-    { text: 'Por favor, no nos pongáis en aprietos a los solteros que no queremos ningún compromiso. Muchas gracias.', author: 'Pablo C.' },
+    { text: 'So happy to come and celebrate your special day!!!', author: 'Katja M.' },
     { text: 'Mucho Whisky por favor ', author: 'Juan V.' },
     { text: 'Que ilusionnnnnnnnnnnn 💖', author: 'Nuria R.' },
     { text: 'Enhorabuena !!!! Muchísimas gracias por la invitación', author: 'Patricia L.' },
