@@ -26,6 +26,45 @@
       📅 Añadir a Google Calendar
     </a>
   </div>
+  <!-- Texto Histórico de la Iglesia -->
+<div class="mt-12 w-full max-w-4xl bg-white/90 backdrop-blur-lg p-10 rounded-3xl shadow-2xl text-gray-800 animate-fade-in text-left">
+  <h2 class="text-3xl font-miller mb-6">¿Quiéres saber más sobre la parroquia?</h2>
+  <p class="mb-4 font-miller">Nos casamos en la Iglesia de Santa Ana, seguramente muy conocida y visitada por nuestros invitados sevillanos. Para los que venís de fuera, os haremos un pequeño resumen de su historia y curiosidades. Así cuando recordéis nuestra boda también podréis presumir de conocer un precioso rincón histórico de Sevilla.</p>
+  <p class="mb-4 font-miller">El rey Alfonso X fundó la puebla de Triana que no solo aumentó la población del arrabal, sino también el número de feligreses, por lo que se necesitaba un nuevo templo que los acogiese. Es entonces cuando se funda una nueva parroquia, la Iglesia de Santa Ana. Su posición privilegiada haría que este templo se viera como uno de los más relevantes de Triana, de ahí que la empezaran a considerar la catedral del barrio.</p>
+  <p class="mb-4 font-miller">¿Y por qué se la bautizó con el nombre de <span class="text-yellow-600 font-bold">Santa Ana</span>? El origen de su nombre se debe a la promesa que Alfonso X, aquejado de un mal en sus ojos, hizo a la Virgen. Si sanaba, erigiría una iglesia para su madre, Santa Ana. Y esto que tiene tintes de leyenda, se recoge de forma histórica en el pergamino enmarcado que se encuentra en la Capilla del Calvario, dentro de la propia Iglesia. Echadle un vistazo. Siempre es divertido leer el castellano antiguo y comprobar cómo hablaban nuestros antepasados.</p>
+  
+  <blockquote class="italic border-l-4 border-orange-400 pl-4 text-sm mb-4 font-miller">
+    “En efecto, sufriendo el monarca un fuerte dolor en sus ojos, en el que incluso ‘saliósele el ojo derecho del casco’, se encomendó a la Virgen Santa María, haciéndole la promesa de erigir una iglesia en Triana dedicada a ‘Sta. Ana Madre de Ntra. Sra. Sta. María’, quedando sano el ojo ‘y en su lugar’. Así, fue hasta Triana para comunicarle la noticia a los vecinos, quienes informan al rey de que pretendían levantar una iglesia ‘que le digan Sta. María’, ante lo que el rey sabio respondió: ‘Yo tengo por bien y es mi voluntad de facer aquí una Iglesia á honor de la bienaventurada Sra. Sta. Ana Madre de Ntra. Sra. la Virgen María, á quien yo soy enudo de servir, é porque yo é bien: é por quanta ayuda me haze, que sin ella yo non podría acabar lo que pido a su presioso Hijo Ntro.’”
+  </blockquote>
+  <!-- Imagen de la Iglesia -->
+<div class="relative max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl animate-fade-in my-8">
+  <img src="/assets/images/escrito.jpeg" alt="Iglesia Nuestra Señora del Amor"
+    class="w-full object-contain rounded-2xl" />
+</div>
+
+  <p class="mb-4 font-miller">Santa Ana se convirtió en uno de los templos más importantes de la Sevilla del siglo XVI, centro económico del imperio español, ya que la capital hispalense conectaba España con América. Con este salto en el tiempo y, aprovechando que hemos llegado a América, os hacemos una sugerencia. Cuando visitéis la Iglesia no dejéis de asomaros a la capilla donde se encuentra la Virgen de la Victoria.</p>
+  <div class="relative max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl animate-fade-in my-8">
+  <img src="/assets/images/virgen.jpeg" alt="Iglesia Nuestra Señora del Amor"
+    class="w-full object-contain rounded-2xl" />
+</div>
+  <p class="mb-4 font-miller">¿Qué tiene que ver la talla de esta Virgen con el continente americano? La respuesta es que os encontráis ante la Virgen que dio nombre a la única nave que regresó de la primera vuelta al mundo: la Nao Victoria. La Virgen ante la que Magallanes recibió las banderas que ondearían en los cinco barcos que emprendieron dicha aventura. La Virgen ante la que rezaron y se encomendaron los 240 hombres antes de emprender la expedición. Y la misma Virgen ante la que, descalzos y vestidos con una sencilla camisa blanca, se postraron en acción de gracias Juan Sebastián Elcano junto a los 17 supervivientes que regresaron a Sevilla tras completar su histórica hazaña.</p>
+  <p class="mb-4 font-miller">Pero no todo va a ser historia. Sevilla es uno de los lugares donde las leyendas asoman por sus rincones y aparecen donde uno menos las espera. Por ejemplo, tras la tumba de un esclavo. Buscad, buscad en la Iglesia de Santa Ana la tumba de Iñigo López. Estuvo oculta tres siglos tras un altar dedicado a Santa Cecilia. En la parte superior figura la inscripción “ESTA FIGURA I SEPULTURA ES DE INIGO LOPES”. El desconocimiento del hombre que yace aquí enterrado ha dado pie a múltiples leyendas populares, tanto sobre su vida como sobre su muerte.</p>
+  <p class="mb-4 font-miller">Si hemos despertado tu curiosidad, sigue leyendo.</p>
+  <p class="mb-4 font-miller">Íñigo López, conocido como “El Negro de Triana”, fue un indio que envió Cristóbal Colón desde la isla caribeña de Borinquén a España. Hijo del rey de la isla, fue su propio padre el que lo entregó como esclavo al descubridor. Cuando el joven esclavo llegó a Sevilla, entró en el Convento de San Francisco, donde se convirtió al cristianismo y adoptó el nombre de Íñigo López. Tras un tiempo en el convento, un marqués de apellido desconocido lo sacó del claustro para convertirlo en su sirviente. Se desconocen los motivos, pero el marqués asesinó al joven. No se sabe si presa del remordimiento o por ocultar su crimen, mandó enterrarle como a un noble en la parroquia de Triana. Desde 1503, está enterrado bajo una lápida de cerámica renacentista del maestro Francisco Niculoso Pisano. Desgraciadamente, incluso después de su muerte, Íñigo siguió siendo víctima del infortunio ya que en el siglo XIX surgió la leyenda de que las solteras que dieran siete patadas en la cara de su tumba, encontrarían marido. Superstición que nunca demostró su eficacia y que obligó a poner una verja alrededor de esta para evitar un mayor deterioro. Por suerte, en 2016 con motivo del 750 aniversario de Santa Ana, el azulejo fue restaurado.</p>
+  <div class="flex flex-wrap gap-4 justify-center my-8">
+  <div class="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-xl flex items-center justify-center bg-white">
+    <img src="/assets/images/tumba2.jpeg" alt="Tumba 1" class="max-w-full max-h-96 object-contain rounded-2xl" />
+  </div>
+  <div class="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-xl flex items-center justify-center bg-white">
+    <img src="/assets/images/tumba1.jpeg" alt="Tumba 2" class="max-w-full max-h-96 object-contain rounded-2xl" />
+  </div>
+</div>
+
+
+
+  <p class="mt-6 font-miller">Así que dejemos descansar en paz al pobre Iñigo y si alguno de vosotros viene dispuesto a nuestra boda a acabar con su soltería, mejor acójase al famoso dicho: “De una boda sale otra”. ¿Quién sabe si la magia de las leyendas sevillanas os pueden ayudar a encontrar pareja? 😏❤️</p>
+</div>
+
 
   <!-- Mapa Interactivo -->
   <div class="mt-12 w-full max-w-4xl rounded-3xl overflow-hidden shadow-xl animate-fade-in">
@@ -40,101 +79,6 @@
       class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-miller font-bold rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
       📍 Abrir en Google Maps
     </a>
-  </div>
-  <!-- Información sobre la Parroquia -->
-  <div
-    class="mt-12 w-full max-w-4xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-    <h2 class="text-3xl font-miller mt-4">La Real Parroquia de Santa Ana</h2>
-
-    <div class="mt-6 flex flex-col md:flex-row gap-6">
-      <div class="w-full md:w-1/2">
-        <img src="/assets/images/real-parroquia-santa-ana.jpg" alt="Real Parroquia de Santa Ana"
-          class="w-full h-auto rounded-xl shadow-lg object-cover">
-      </div>
-      <div class="w-full md:w-1/2">
-        <p class="text-m flex justify-left word-wrap font-light">
-          La Real Parroquia de Santa Ana es uno de los templos más emblemáticos de Sevilla, conocida por su arquitectura
-          de estilo gótico-mudéjar. Fue fundada por el rey Alfonso X el Sabio en agradecimiento a Santa Ana por un
-          milagro que sanó su visión. Esta iglesia reemplazó a una pequeña capilla en el castillo de San Jorge después
-          de la reconquista de la ciudad.
-        </p>
-      </div>
-    </div>
-
-    <div class="mt-6">
-      <h3 class="text-2xl font-miller">Orígenes e Historia</h3>
-      <p class="mt-3 text-m font-light">
-        El castillo de San Jorge, situado junto al río Guadalquivir y el puente de barcas, fue el punto de control de
-        las entradas occidentales a Sevilla durante la época musulmana. Este castillo fue la sede de una pequeña
-        capilla, donde se celebraban los cultos antes de la reconquista cristiana. Sin embargo, con el crecimiento de la
-        población cristiana, fue necesario construir una iglesia más grande.
-      </p>
-      <p class="mt-3 text-m font-light">
-        La construcción de la parroquia comenzó en 1266 bajo la dirección de maestros canteros castellanos y alarifes
-        musulmanes, quienes utilizaron ladrillo, material propio de la arquitectura almohade. Esta iglesia se convirtió
-        en la primera de nueva planta en Sevilla después de la reconquista de 1248. El rey Fernando III transformó las
-        mezquitas de la ciudad en iglesias, y la gran mezquita aljama pasó a ser la catedral de Sevilla.
-      </p>
-    </div>
-
-    <div class="mt-6">
-      <h3 class="text-2xl font-miller">Arquitectura y Estilo</h3>
-      <p class="mt-3 text-m font-light">
-        La Real Parroquia de Santa Ana es un claro ejemplo de la fusión de estilos góticos y mudéjares, con detalles de
-        ladrillo y azulejos característicos de la época. Su construcción fue influenciada tanto por las tradiciones
-        cristianas como musulmanas, lo que la convierte en un testimonio de la convivencia de estas culturas durante la
-        Edad Media en Sevilla.
-      </p>
-      <p class="mt-3 text-m font-light">
-        La iglesia es famosa por su impresionante torre, que se erige sobre el barrio de Triana, proporcionando un hito
-        visual desde diversos puntos de la ciudad. Durante los siglos posteriores, la parroquia experimentó un auge
-        gracias al crecimiento económico de Sevilla, especialmente después del descubrimiento de América.
-      </p>
-      <div class="mt-6 flex flex-col md:flex-row gap-6">
-        <div class="w-full md:w-1/2">
-          <img src="/assets/images/torre-santa-ana.jpg" alt="Torre de Santa Ana"
-            class="w-full h-auto rounded-xl shadow-lg object-cover">
-        </div>
-        <div class="w-full md:w-1/2">
-          <p class="text-m font-light">
-            La torre de Santa Ana, construida en estilo mudéjar, se eleva majestuosa sobre el barrio de Triana. Esta
-            torre ha sido un símbolo de la parroquia y de la identidad del barrio, con su estructura que combina la
-            solidez de la tradición musulmana y la ornamentación gótica.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-6">
-      <h3 class="text-2xl font-miller">Restauración y Reconstrucción</h3>
-      <p class="mt-3 text-m font-light">
-        En 1755, un devastador terremoto causó graves daños a la parroquia. La restauración del edificio fue liderada
-        por Pedro de Silva, quien le dio un estilo barroco al templo que aún permanece hoy en día. A mediados del siglo
-        XX, entre 1970 y 1975, el arquitecto Rafael Manzano emprendió una nueva restauración para recuperar su aspecto
-        medieval original, restaurando el ladrillo y la piedra en su interior.
-      </p>
-    </div>
-
-    <div class="mt-6">
-      <h3 class="text-2xl font-miller">Festividades y Procesiones</h3>
-      <p class="mt-3 text-m font-light">
-        La parroquia de Santa Ana ha sido un centro importante para las festividades religiosas del barrio de Triana.
-        Entre sus celebraciones más destacadas se encuentran el Corpus Christi, celebrado desde el siglo XVI, y la
-        novena a Santa Ana, que se celebra del 18 al 26 de julio. Durante la Semana Santa, las hermandades del barrio
-        procesionan hacia la iglesia para rendir homenaje a la Virgen de la O, la cual cruza el puente de barcas hacia
-        la Catedral de Sevilla.
-      </p>
-    </div>
-
-    <div class="mt-6">
-      <h3 class="text-2xl font-miller">Patrimonio Cultural</h3>
-      <p class="mt-3 text-m font-light">
-        La Real Parroquia de Santa Ana fue declarada monumento de interés cultural en 1931 y continúa siendo un
-        referente de la arquitectura sevillana. Hoy en día, la iglesia no solo sirve como un lugar de culto, sino
-        también como un centro cultural y turístico, donde los visitantes pueden admirar su impresionante arte,
-        arquitectura y legado histórico.
-      </p>
-    </div>
   </div>
 </template>
 
