@@ -59,7 +59,7 @@
 
       <div class="mt-6">
         <p class="text-lg font-light">
-          Puedes poner <b>"Regalo de Boda + tu nombre"</b> como concepto para que podamos agradecértelo personalmente.
+          Puedes poner <b>"Tu nombre"</b> como concepto para que podamos agradecértelo personalmente. Por favor, no incluir <b>"Boda"</b> o <b>"Regalo"</b> o similares en el concepto. De cara a Hacienda puede ser mortal 😅.
         </p>
       </div>
 
