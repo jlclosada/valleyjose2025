@@ -10,13 +10,16 @@
     <!-- Información sobre el regalo -->
     <div
       class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-      <h2 class="text-3xl mt-4 font-miller">Cuenta Bancaria para Transferencias</h2>
-
       <p class="mt-4 text-lg font-light">
         Nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sí, el regalo de siempre, pero es lo que
         más nos ayudaría.<br><br>
         Sin embargo, si prefieres hacer un regalo más personal o directamente darnos un abrazo, lo aceptaremos
         encantados.
+      </p>
+      <h2 class="text-3xl mt-4 font-miller">Cuenta Bancaria para Transferencias 🏦 💳 🪪</h2>
+      
+      <p class="mt-4 text-lg font-light">
+        Puedes realizar una transferencia a la siguiente cuenta bancaria:
       </p>
 
       <div class="mt-6">
@@ -62,6 +65,24 @@
           Puedes poner <b>"Tu nombre"</b> como concepto para que podamos agradecértelo personalmente. Por favor, no incluir <b>"Boda"</b> o <b>"Regalo"</b> o similares en el concepto. De cara a Hacienda puede ser mortal 😅.
         </p>
       </div>
+      <h2 class="text-3xl mt-4 font-miller">Dinero en efectivo 💵</h2>
+      <p class="mt-4 text-lg font-light">
+        <b>La mejor opción de cara a Hacienda.</b><br></br>
+        Hoy en día, los regalos de boda se consideran donaciones y por eso tenemos que declararlo. Al vivir en Madrid, las donaciones de familiares se descuentan casi por completo, pero del resto no, y podríamos llegar a pagar <b>hasta un 34% de impuestos.</b><br></br>
+        Como consideramos que España ya tiene unas carreteras sensacionales, el dinero en efectivo también nos vendría muy bien.<br></br>
+      </p>
+
+      <h2 class="text-3xl mt-4 font-miller">Regalo personal 🎁</h2>
+      <p class="mt-4 text-lg font-light">
+        Si te gustaría hacernos un regalo más personal, aquí tienes algunas ideas que nos encantarían: <br></br>
+        <br></br>
+        - Vajillas y cristalería (preferiblemente en tonos neutros, blancos o azules) ✅ <br></br>
+        - Utensilios de cocina (sartenes, ollas, cuchillos de calidad) ✅ <br></br>
+        - Ropa de cama y toallas (preferiblemente en tonos neutros, blancos o azules) ✅ <br></br>
+        - Cabecero de cama <br></br>
+        - Electrodomésticos pequeños (batidora, tostadora, cafetera) ✅ <br></br>
+        - Minibar <br></br>
+      </p>
 
       <div class="mt-6">
         <p class="text-lg font-light">¡Te lo agradecemos mucho!</p>

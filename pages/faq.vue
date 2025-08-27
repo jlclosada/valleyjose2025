@@ -81,7 +81,7 @@ const faqs = ref([
   },
   {
     pregunta: "¿Habrá transporte disponible?",
-    respuesta: "En principio no contamos con autobuses o transporte colectivo. Se recomienda llegar en coche o taxi. La iglesia está en el centro de Sevilla, por lo que es fácilmente accesible. Sin emabrgo, en el <a href='https://docs.google.com/forms/d/e/1FAIpQLSeg8s8hQTXAMKssr9iePRGYO6RhIUf1eKsO0NfRnYUjJAlD5w/viewform?embedded=true' class='text-blue-800 hover:underline'>formulario</a> podras registrar si necesitas ayuda con el transporte, para poder organizarlo.",
+    respuesta: "Contamos con autobuses que facilitarán el traslado desde la iglesia hasta el cortijo en Gerena con trayectos de Ida y Vuelta. Se recomienda llegar en coche o taxi. La iglesia está en el centro de Sevilla, por lo que es fácilmente accesible. Sin emabrgo, en el <a href='https://docs.google.com/forms/d/e/1FAIpQLSeg8s8hQTXAMKssr9iePRGYO6RhIUf1eKsO0NfRnYUjJAlD5w/viewform?embedded=true' class='text-blue-800 hover:underline'>formulario</a> podras registrar si necesitas ayuda con el transporte, para poder organizarlo.",
     abierto: false
   },
   {
