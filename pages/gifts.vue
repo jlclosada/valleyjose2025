@@ -68,7 +68,7 @@
       <h2 class="text-3xl mt-4 font-miller">Dinero en efectivo 💵</h2>
       <p class="mt-4 text-lg font-light">
         <b>La mejor opción de cara a Hacienda.</b><br></br>
-        Hoy en día, los regalos de boda se consideran donaciones y por eso tenemos que declararlo.</b><br></br>
+        Hoy en día, los regalos de boda se consideran donaciones y por eso tenemos que declararlo.<br></br>
         El dinero en efectivo también nos vendría muy bien.<br></br>
       </p>
 
