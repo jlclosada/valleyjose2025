@@ -11,10 +11,10 @@
     <div
       class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
       <p class="mt-4 text-lg font-light">
-        Nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sí, el regalo de siempre, pero es lo que
+        Lo que más ilusión nos hace es compartir este día con todos vosotros! Ese es nuestro mayor regalo.<br><br>
+        Si quieres hacernos un regalo, nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sabemos que es el regalo más típico, pero es lo que
         más nos ayudaría.<br><br>
-        Sin embargo, si prefieres hacer un regalo más personal o directamente darnos un abrazo, lo aceptaremos
-        encantados.
+        Sin embargo, si prefieres hacer un regalo más personal o directamente darnos un abrazo, nos parecerá estupendo!
       </p>
       <h2 class="text-3xl mt-4 font-miller">Cuenta Bancaria para Transferencias 🏦 💳 🪪</h2>
       
