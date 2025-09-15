@@ -18,7 +18,7 @@
       <h2 class="text-3xl font-miller mt-4">Detalles de la Ceremonia</h2>
       <p class="mt-3 text-lg font-miller">📍 <strong class="font-miller">Real Parroquia de Señora Santa Ana, Sevilla</strong></p>
       <p class="text-lg mt-3 font-miller">📅 <strong class="font-miller">22 de Noviembre de 2025</strong></p>
-      <p class="text-lg mt-3">⏰ <strong class="font-miller">11:30 AM</strong></p>
+      <p class="text-lg mt-3">⏰ <strong class="font-miller">11:0 AM</strong></p>
     </div>
     <a target="_blank"
       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Valle+%26+Jose+Luis&dates=20251122T103000Z/20251122T120000Z&details=Acompáñanos+en+nuestra+ceremonia+religiosa+en+la+Real+Parroquia+de+Señora+Santa+Ana&location=Real+Parroquia+de+Señora+Santa+Ana&sf=true&output=xml"
