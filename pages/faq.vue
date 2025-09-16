@@ -76,12 +76,12 @@ const faqs = ref([
   },
   {
     pregunta: "¿Dónde y cuándo es la ceremonia?",
-    respuesta: "La ceremonia religiosa empezará a las 11:30 de la mañana en la Parroquia de Santa Ana, en Triana, Sevilla.<br>Se recomienda llegar con tiempo para encontrar aparcamiento y tomar asiento.",
+    respuesta: "La ceremonia religiosa empezará a las 11:30 de la mañana en la Parroquia de Santa Ana, en Triana, Sevilla.<br>Se recomienda llegar con tiempo para encontrar aparcamiento y tomar asiento. La hora de convocatoria en la parroquia será a las <b>11:00.</b>",
     abierto: false
   },
   {
     pregunta: "¿Habrá transporte disponible?",
-    respuesta: "Contamos con autobuses que facilitarán el traslado desde la iglesia hasta el cortijo en Gerena con trayectos de Ida y Vuelta. Se recomienda llegar en coche o taxi. La iglesia está en el centro de Sevilla, por lo que es fácilmente accesible. Sin embargo, en el <a href='https://docs.google.com/forms/d/e/1FAIpQLSeg8s8hQTXAMKssr9iePRGYO6RhIUf1eKsO0NfRnYUjJAlD5w/viewform?embedded=true' class='text-blue-800 hover:underline'>formulario</a> podras registrar si necesitas ayuda con el transporte, para poder organizarlo.",
+    respuesta: "Contamos con autobuses que facilitarán el traslado desde la iglesia hasta el cortijo en Gerena con trayectos de Ida y Vuelta. Sin embargo también se puede llegar en coche o taxi. Si necesitas sitio en el autobús, por favor, indicanóslo personalmente para poder reservar las plazas.",
     abierto: false
   },
   {
