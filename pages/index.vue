@@ -24,6 +24,9 @@
       <!-- Cuenta regresiva -->
       <Countdown />
     </div>
+    <div class="my-10 flex justify-center">
+      <Preboda />
+    </div>
     
     <!-- Trivial entre el contador y los comentarios -->
     <div class="my-10 flex justify-center">
