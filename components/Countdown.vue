@@ -1,195 +1,158 @@
 <template>
-  <div class="flex justify-center items-center mt-6">
-    <div class="countdown-container flex gap-6 md:gap-10">
-      <!-- Días -->
-      <div class="countdown-circle">
-        <div class="circle-content">
-          <div class="time">{{ days.toString().padStart(2, '0') }}</div>
-          <div class="label">Días</div>
+  <div class="countdown-wrap">
+    <div v-if="!isOver" class="countdown-grid">
+      <div v-for="unit in units" :key="unit.label" class="countdown-unit">
+        <div class="unit-ring">
+          <svg class="ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D4AE6A" />
+                <stop offset="100%" stop-color="#8A6E32" />
+              </linearGradient>
+            </defs>
+            <circle class="ring-bg" cx="50" cy="50" r="44" />
+            <circle
+              class="ring-fill"
+              cx="50" cy="50" r="44"
+              :stroke-dasharray="`${unit.dash} ${circumference}`"
+              stroke="url(#goldGrad)"
+            />
+          </svg>
+          <span class="unit-value">{{ unit.value }}</span>
         </div>
-        <div class="circle-progress" :style="{ '--progress': (days / 365) * 100 }"></div>
+        <span class="unit-label">{{ unit.label }}</span>
       </div>
+    </div>
 
-      <!-- Horas -->
-      <div class="countdown-circle">
-        <div class="circle-content">
-          <div class="time">{{ hours.toString().padStart(2, '0') }}</div>
-          <div class="label">Horas</div>
-        </div>
-        <div class="circle-progress" :style="{ '--progress': (hours / 24) * 100 }"></div>
-      </div>
-
-      <!-- Minutos -->
-      <div class="countdown-circle">
-        <div class="circle-content">
-          <div class="time">{{ minutes.toString().padStart(2, '0') }}</div>
-          <div class="label">Minutos</div>
-        </div>
-        <div class="circle-progress" :style="{ '--progress': (minutes / 60) * 100 }"></div>
-      </div>
-
-      <!-- Segundos -->
-      <div class="countdown-circle">
-        <div class="circle-content">
-          <div class="time">{{ seconds.toString().padStart(2, '0') }}</div>
-          <div class="label">Segundos</div>
-        </div>
-        <div class="circle-progress" :style="{ '--progress': (seconds / 60) * 100 }"></div>
-      </div>
+    <div v-else class="countdown-done">
+      <span class="font-great-vibes">¡Hoy es el gran día!</span>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue'
 
-const days = ref(0);
-const hours = ref(0);
-const minutes = ref(0);
-const seconds = ref(0);
+const days    = ref(0)
+const hours   = ref(0)
+const minutes = ref(0)
+const seconds = ref(0)
+const isOver  = ref(false)
+
+const circumference = 2 * Math.PI * 44
+
+const pad = (n) => String(n).padStart(2, '0')
+const pct = (val, max) => (val / max) * circumference
+
+const units = computed(() => [
+  { label: 'Días',     value: pad(days.value),    dash: pct(days.value, 365) },
+  { label: 'Horas',    value: pad(hours.value),   dash: pct(hours.value, 24) },
+  { label: 'Minutos',  value: pad(minutes.value), dash: pct(minutes.value, 60) },
+  { label: 'Segundos', value: pad(seconds.value), dash: pct(seconds.value, 60) },
+])
 
 onMounted(() => {
-  const weddingDate = new Date('2025-11-22T11:30:00');
-
-  const updateCountdown = () => {
-    const now = new Date();
-    const diff = weddingDate - now;
-
-    if (diff <= 0) {
-      days.value = 0;
-      hours.value = 0;
-      minutes.value = 0;
-      seconds.value = 0;
-      return;
-    }
-
-    days.value = Math.floor(diff / (1000 * 60 * 60 * 24));
-    hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    minutes.value = Math.floor((diff / (1000 * 60)) % 60);
-    seconds.value = Math.floor((diff / 1000) % 60);
-  };
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-});
+  const target = new Date('2025-11-22T11:30:00')
+  const tick = () => {
+    const diff = target - new Date()
+    if (diff <= 0) { isOver.value = true; return }
+    days.value    = Math.floor(diff / 86_400_000)
+    hours.value   = Math.floor(diff / 3_600_000) % 24
+    minutes.value = Math.floor(diff / 60_000) % 60
+    seconds.value = Math.floor(diff / 1_000) % 60
+  }
+  tick()
+  setInterval(tick, 1000)
+})
 </script>
 
 <style scoped>
-.countdown-container {
-  padding: 20px;
-}
-
-.countdown-circle {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.countdown-wrap {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.1),
-    inset 0 0 15px rgba(255, 255, 255, 0.3);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0.5rem 0;
 }
 
-.countdown-circle:hover {
-  transform: scale(1.05);
-  box-shadow: 
-    0 6px 40px rgba(0, 0, 0, 0.15),
-    inset 0 0 20px rgba(255, 255, 255, 0.4);
+.countdown-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.circle-progress {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(
-    rgba(134, 101, 168, 0.8) calc(var(--progress, 0) * 1%),
-    transparent 0
-  );
-  mask: radial-gradient(transparent 60%, black 61%);
-  transition: background 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.circle-content {
-  position: relative;
-  z-index: 2;
+.countdown-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.6rem;
 }
 
-.time {
-  font-size: 2.5rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #9A7EB0 0%, #3e1561 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: all 0.5s ease;
+.unit-ring {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.label {
-  font-size: 0.75rem;
-  color: #6C5B7B;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-top: 4px;
-  font-weight: 500;
-  transition: all 0.5s ease;
-}
-
-/* Efecto de iluminación suave */
-.countdown-circle::after {
-  content: '';
+.ring-svg {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 50%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(58, 41, 41, 0)
-  );
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
 }
 
-.countdown-circle:hover::after {
-  opacity: 1;
+.ring-bg {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 2.5;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .countdown-circle {
-    width: 100px;
-    height: 100px;
-  }
-  .time {
-    font-size: 1.1rem;
-  }
+.ring-fill {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.8s cubic-bezier(0.4,0,0.2,1);
 }
 
-@media (max-width: 480px) {
-  .countdown-container {
-    gap: 8px;
-  }
-  .countdown-circle {
-    width: 85px;
-    height: 85px;
-  }
-  .time {
-    font-size: 1.1rem;
-  }
-  .label {
-    font-size: 0.65rem;
-  }
+.unit-value {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 2.5rem;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.unit-label {
+  font-family: var(--font-sans);
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.countdown-done {
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+  color: var(--color-gold);
+}
+
+@media (max-width: 640px) {
+  .countdown-grid { gap: 1.1rem; }
+  .unit-ring { width: 85px; height: 85px; }
+  .unit-value { font-size: 1.75rem; }
+  .unit-label { font-size: 0.48rem; }
+}
+
+@media (max-width: 380px) {
+  .unit-ring { width: 72px; height: 72px; }
+  .unit-value { font-size: 1.45rem; }
 }
 </style>

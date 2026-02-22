@@ -1,53 +1,109 @@
 <template>
-  <div class="w-full min-h-screen">
-    <!-- Fondo e imágenes -->
-    <div class="relative w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-fixed">
-      <!-- Desktop: galería completa -->
-      <div v-if="!isMobile" class="section absolute inset-0 z-0">
-        <img
-          v-for="(image, index) in images"
-          :key="index"
-          :src="image"
-          alt="Imagen"
-        />
+  <div class="home">
+
+    <!-- ═══════════════════════════════════════
+         HERO — Galería expandible + overlay
+         ═══════════════════════════════════════ -->
+    <section class="hero">
+
+      <!-- Galería desktop: columnas expandibles -->
+      <div v-if="!isMobile" class="hero-gallery" aria-hidden="true">
+        <div
+          v-for="(img, i) in images"
+          :key="i"
+          class="hero-col"
+          :class="{ 'hero-col--active': hoveredIndex === i }"
+          @mouseenter="hoveredIndex = i"
+          @mouseleave="hoveredIndex = null"
+        >
+          <img :src="img" alt="" loading="lazy" />
+          <div class="hero-col-overlay"></div>
+        </div>
       </div>
 
-      <!-- Móvil: solo una imagen -->
-      <div v-else class="absolute inset-0 z-0">
-        <img :src="images[0]" alt="Imagen fondo móvil" class="w-full h-full object-cover opacity" />
+      <!-- Galería móvil: imagen única de fondo -->
+      <div v-else class="hero-mobile-bg" aria-hidden="true">
+        <img :src="images[0]" alt="" />
+        <div class="hero-mobile-overlay"></div>
       </div>
 
-      <!-- Confirmación de asistencia -->
-      <ConfirmAttendanceModal />
+      <!-- Contenido centrado del hero -->
+      <div class="hero-content">
+        <span class="label-tag animate-fade-up" style="color:rgba(255,255,255,0.9); border-color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.12);">
+          22 de Noviembre de 2025 · Sevilla
+        </span>
 
+        <h1 class="hero-title animate-fade-up delay-200">
+          <span class="hero-title-script">Valle</span>
+          <span class="hero-title-amp">&amp;</span>
+          <span class="hero-title-script">José Luis</span>
+        </h1>
 
-      <!-- Cuenta regresiva -->
-      <Countdown />
-    </div>
-    <!-- Trivial entre el contador y los comentarios -->
-    <div class="my-10 flex justify-center">
-      <TrivialModal />
-    </div>
-    <!-- Comentarios destacados: FUERA del bloque centrado -->
-    <HighlightedComments />
+        <p class="hero-subtitle animate-fade-up delay-300">
+          Real Parroquia de Señora Santa Ana · Cortijo El Esparragal
+        </p>
+
+        <div class="hero-divider animate-fade-up delay-500">
+          <span class="hero-divider-line"></span>
+          <svg class="hero-divider-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/>
+          </svg>
+          <span class="hero-divider-line"></span>
+        </div>
+
+        <div class="hero-actions animate-fade-up delay-700">
+          <ConfirmAttendanceModal />
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint animate-float" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CUENTA ATRÁS
+         ═══════════════════════════════════════ -->
+    <section class="countdown-section">
+      <div class="section-inner">
+        <span class="label-tag">Cuenta atrás</span>
+        <h2 class="section-heading">Nos queda poco</h2>
+        <Countdown />
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TRIVIAL
+         ═══════════════════════════════════════ -->
+    <section class="trivial-section">
+      <div class="section-inner">
+        <TrivialModal />
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         COMENTARIOS
+         ═══════════════════════════════════════ -->
+    <section class="comments-section">
+      <div class="section-inner">
+        <span class="label-tag">Vuestras palabras</span>
+        <h2 class="section-heading">Lo que decís vosotros</h2>
+        <HighlightedComments />
+      </div>
+    </section>
+
   </div>
 </template>
 
-
-
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMobile = ref(false)
+const hoveredIndex = ref(null)
 
-const checkMobile = () => {
-  isMobile.value = window.innerWidth < 768
-}
-
-onMounted(() => {
-  checkMobile()
-  window.addEventListener('resize', checkMobile)
-})
 const images = [
   '/images/img5.jpeg',
   '/images/img6.jpeg',
@@ -55,240 +111,169 @@ const images = [
   '/images/img11.jpeg',
   '/images/img13.jpeg',
   '/images/img15.jpeg',
-];
+]
+
+const checkMobile = () => { isMobile.value = window.innerWidth < 768 }
+
+onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile, { passive: true })
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobile)
+})
 </script>
 
 <style scoped>
-/* Fondo principal */
-.bg-cover {
-  background-size: cover;
-}
+.home { overflow-x: hidden; }
 
-.bg-center {
-  background-position: center;
-}
-
-.bg-fixed {
-  background-attachment: fixed;
-}
-
-/* Animaciones */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-slide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.font-custom {
-  font-family: 'Great Vibes', cursive;
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease-out;
-}
-
-.animate-fade-slide {
-  animation: fade-slide 1s ease-out;
-}
-
-/* Estilo de las imágenes tipo galería expandible */
-.section {
-  display: flex;
-  min-width: 60px;
+/* ─── HERO ─────────────────────────────────── */
+.hero {
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  z-index: 0;
 }
 
-.section img {
-  width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: 1;
-  transition: 0.5s ease;
-  border-radius: 8px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+.hero-gallery {
+  position: absolute;
+  inset: 0;
+  display: flex;
 }
 
-.section img:hover {
+.hero-col {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: crosshair;
-  width: 300px;
-  opacity: 1;
-  filter: contrast(120%);
+}
+.hero-col--active { flex: 3.5; }
+
+.hero-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1), filter 0.6s ease;
+  filter: brightness(0.5) saturate(0.85);
+}
+.hero-col--active img {
+  transform: scale(1.04);
+  filter: brightness(0.62) saturate(1.05);
 }
 
-/* Texto */
-h1, p {
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+.hero-col-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,18,8,0.55) 0%, transparent 65%);
+  pointer-events: none;
 }
 
-h1 {
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+/* Móvil */
+.hero-mobile-bg { position: absolute; inset: 0; }
+.hero-mobile-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.hero-mobile-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(26,18,8,0.3) 0%, rgba(26,18,8,0.5) 60%, rgba(26,18,8,0.7) 100%);
 }
 
-/* Contenedor del texto */
-.text-container {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.05);
+/* Contenido hero */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  max-width: 820px;
 }
 
-/* Efecto de texto con borde */
-.text-stroke {
-  color: transparent;
-  -webkit-text-stroke: 1.5px #ffffff;
-  text-stroke: 1.5px #ffffff;
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  margin: 0;
+  line-height: 1.0;
+}
+.hero-title-script {
+  font-family: var(--font-script);
+  font-size: clamp(3.5rem, 11vw, 7.5rem);
+  color: white;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.35);
+  line-height: 1.05;
+}
+.hero-title-amp {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  color: var(--color-gold-light);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  opacity: 0.9;
+  line-height: 1;
+}
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 200px;
+}
+.hero-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184,148,74,0.65), transparent);
+}
+.hero-divider-icon { width: 13px; height: 13px; color: var(--color-gold-light); flex-shrink: 0; }
+
+.hero-actions { margin-top: 0.25rem; }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: rgba(255,255,255,0.45);
+  width: 26px;
+}
+.scroll-hint svg { width: 100%; }
+
+/* ─── SECCIONES ─────────────────────────────── */
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.section-heading {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: var(--color-dark);
+  margin: 0.75rem 0 2.5rem;
+  letter-spacing: 0.02em;
 }
 
-/* Gradiente para el texto */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #e2d1f8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 10px rgba(226, 209, 248, 0.3);
-}
+.countdown-section { background: var(--color-cream); border-top: 1px solid var(--color-border); }
+.trivial-section    { background: var(--color-ivory); }
+.comments-section   { background: var(--color-cream); border-top: 1px solid var(--color-border); }
 
-/* Animaciones personalizadas */
-@keyframes title-appear {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes subtitle-appear {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  60% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes underline-pulse {
-  0%, 100% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scaleX(1.1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes float-1 {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-}
-
-@keyframes float-2 {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(10px) rotate(-5deg);
-  }
-}
-
-.animate-title {
-  animation: title-appear 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-}
-
-.animate-subtitle {
-  animation: subtitle-appear 1.8s ease-out forwards;
-}
-
-.animate-underline {
-  animation: underline-pulse 3s ease-in-out infinite;
-}
-
-.animate-float-1 {
-  animation: float-1 8s ease-in-out infinite;
-}
-
-.animate-float-2 {
-  animation: float-2 6s ease-in-out infinite 2s;
-}
-
-/* Responsividad mejorada */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 4.5rem;
-    line-height: 1.1;
-  }
-  
-  p {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .text-container {
-    padding: 2rem 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-  
-  p {
-    font-size: 1.2rem;
-  }
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .section {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .section img {
-    width: 100%;
-    height: 200px;
-  }
-
-  .section img:hover {
-    width: 100%;
-    height: 250px;
-  }
+  .hero-content { gap: 1rem; }
+  .section-inner { padding: 3.5rem 1.25rem; }
 }
 </style>

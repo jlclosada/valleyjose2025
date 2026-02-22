@@ -1,65 +1,333 @@
 @import "tailwindcss";
 @import "@fontsource/great-vibes";
 
-
-/* Fuente base moderna */
-body {
-  font-family: 'Miller Display', serif;
-  margin:0;
-  padding:0;
-}
-
-
-/* Fuente elegante para títulos románticos */
-.font-great-vibes {
-  font-family: 'Great Vibes', cursive;
-}
-
-/* Fuente clásica para secciones de elegancia */
-.font-playfair {
-  font-family: 'Playfair Display', serif;
-}
-
-/* Fuente manuscrita con estilo artístico */
-.font-dancing {
-  font-family: 'Dancing Script', cursive;
-}
-
-.font-miller {
-  font-family: 'Miller Display', serif;
-  font-weight: 200;
-}
-
-
-@font-face {
-  font-family: 'Miller Display';
-  src: url('../css/miller-display/fonnts.com-Miller_Display_Bold.otf') format('opentype');
-  font-weight: 400;
-  font-style: bold;
-}
+/* ============================================
+   FUENTES PERSONALIZADAS - MILLER DISPLAY
+   ============================================ */
 @font-face {
   font-family: 'Miller Display';
   src: url('../css/miller-display/fonnts.com-Miller_Display_Roman.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
-
 @font-face {
   font-family: 'Miller Display';
   src: url('../css/miller-display/fonnts.com-Miller_Display_Italic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Miller Display';
   src: url('../css/miller-display/fonnts.com-Miller_Display_Bold.otf') format('opentype');
-  font-weight: 400;
-  font-style: bold;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-
 @font-face {
   font-family: 'Miller Display';
   src: url('../css/miller-display/fonnts.com-Miller_Display_Light.otf') format('opentype');
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
+@font-face {
+  font-family: 'Miller Display';
+  src: url('../css/miller-display/fonnts.com-Miller_Display_Light_Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ============================================
+   VARIABLES CSS - PALETA ELEGANTE
+   ============================================ */
+:root {
+  --color-cream:      #FAF7F2;
+  --color-ivory:      #F5EFE6;
+  --color-gold:       #B8944A;
+  --color-gold-light: #D4AE6A;
+  --color-gold-dark:  #8A6E32;
+  --color-deep:       #1A1208;
+  --color-dark:       #2D2010;
+  --color-muted:      #6B5B45;
+  --color-border:     #E8DDD0;
+  --color-rose:       #8B5E52;
+
+  --font-serif:  'Miller Display', 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans:   'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  --section-pad: 5rem;
+  --card-radius: 1.5rem;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* ============================================
+   CLASES DE FUENTES
+   ============================================ */
+.font-great-vibes { font-family: var(--font-script); }
+.font-playfair    { font-family: 'Playfair Display', var(--font-serif); }
+.font-dancing     { font-family: 'Dancing Script', cursive; }
+.font-miller      { font-family: var(--font-serif); font-weight: 300; }
+
+.font-sans-elegant {
+  font-family: var(--font-sans);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   COMPONENTES GLOBALES
+   ============================================ */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 20rem;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
+.gold-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(184,148,74,0.2);
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 30px rgba(26,18,8,0.06), 0 1px 3px rgba(184,148,74,0.1);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.glass-card:hover {
+  box-shadow: 0 8px 50px rgba(26,18,8,0.1), 0 2px 6px rgba(184,148,74,0.2);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.5rem;
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 4px 20px rgba(184,148,74,0.35);
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 100px;
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(184,148,74,0.5); }
+.btn-gold:hover::before { opacity: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.2rem;
+  background: transparent;
+  color: var(--color-gold-dark);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1.5px solid var(--color-gold);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.btn-outline:hover {
+  background: var(--color-gold);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,148,74,0.4);
+}
+
+.label-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  padding: 0.3rem 1rem;
+  border: 1px solid rgba(184,148,74,0.4);
+  border-radius: 100px;
+  background: rgba(184,148,74,0.07);
+}
+
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-slide {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184,148,74,0); }
+  50%       { box-shadow: 0 0 20px 4px rgba(184,148,74,0.25); }
+}
+@keyframes modal-appear {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-fade-up    { animation: fade-up 0.9s cubic-bezier(0.19,1,0.22,1) both; }
+.animate-fade-in    { animation: fade-in 1s ease-out both; }
+.animate-fade-slide { animation: fade-slide 1s ease-out both; }
+.animate-scale-in   { animation: scale-in 0.6s cubic-bezier(0.19,1,0.22,1) both; }
+.animate-float      { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-modal      { animation: modal-appear 0.45s cubic-bezier(0.19,1,0.22,1) both; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-700 { animation-delay: 0.7s; }
+
+/* ============================================
+   TEXTO DECORATIVO
+   ============================================ */
+.text-gold          { color: var(--color-gold); }
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-dark) 0%,
+    var(--color-gold-light) 40%,
+    #F0D080 50%,
+    var(--color-gold-light) 60%,
+    var(--color-gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ============================================
+   BLOCKQUOTES ELEGANTES
+   ============================================ */
+blockquote.elegant {
+  border-left: 2px solid var(--color-gold);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background: rgba(184,148,74,0.04);
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   IMÁGENES
+   ============================================ */
+.img-elegant {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(26,18,8,0.12), 0 4px 12px rgba(26,18,8,0.08);
+}
+
+/* ============================================
+   MAPAS
+   ============================================ */
+.map-container {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(26,18,8,0.1), 0 0 0 1px rgba(184,148,74,0.15);
+}
+.map-container iframe { display: block; width: 100%; border: none; }
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-ivory); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-gold-light), var(--color-gold));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dark); }
+
+::selection { background: rgba(184,148,74,0.2); color: var(--color-dark); }
