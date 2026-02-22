@@ -1,166 +1,252 @@
 <template>
-  <div class="relative w-full min-h-screen flex flex-col items-center text-center px-6 pt-24">
-    <!-- Título de la Página -->
-    <div class="relative z-10 mt-10 animate-fade-in w-full max-w-4xl backdrop-blur-lg p-10 rounded-3xl text-gray-700">
-      <h1 class="text-5xl md:text-6xl font-miller drop-shadow-lg animate-fade-slide">
-        ¿Cómo Realizar un Regalo?
-      </h1>
-    </div>
+  <div class="page-wrap">
 
-    <!-- Información sobre el regalo -->
-    <div
-      class="mt-10 w-full max-w-3xl bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-gray-300 animate-fade-in text-gray-700 text-left mb-2">
-      <p class="mt-4 text-lg font-light">
-        Lo que más ilusión nos hace es compartir este día con todos vosotros! Ese es nuestro mayor regalo.<br><br>
-        Si quieres hacernos un regalo, nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sabemos que es el regalo más típico, pero es lo que
-        más nos ayudaría.<br><br>
-        Sin embargo, si prefieres hacer un regalo más personal o directamente darnos un abrazo, nos parecerá estupendo!
-      </p>
-      <h2 class="text-3xl mt-4 font-miller">Cuenta Bancaria para Transferencias 🏦 💳 🪪</h2>
-      
-      <p class="mt-4 text-lg font-light">
-        Puedes realizar una transferencia a la siguiente cuenta bancaria:
-      </p>
-
-      <div class="mt-6">
-        <p class="text-lg font-miller-600">Titular de la cuenta:</p>
-        <p class="text-lg font-miller"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u> (tú decides)</p>
-      </div>
-
-      <!-- IBAN con botón de copiar y tooltip -->
-      <div class="mt-6 flex items-center gap-3 relative">
-        <div>
-          <p class="text-lg font-semibold">IBAN:</p>
-          <p class="text-lg">{{ account }}</p>
-        </div>
-
-        <div class="relative group">
-          <button @click="copyToClipboard"
-            class="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition relative cursor-pointer">
-            📋
-          </button>
-          <!-- Tooltip que se muestra al pasar el mouse -->
-          <span v-if="!copied"
-            class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
-            Copiar
-          </span>
-        </div>
-
-        <!-- Mensaje de "Copiado" -->
-        <span v-if="copied" class="text-green-600 text-sm ml-2">¡Copiado!</span>
-      </div>
-
-      <div class="mt-6">
-        <p class="text-lg font-miller"><b>Entidad:</b></p>
-        <p class="text-lg font-miller">BBVA</p>
-      </div>
-
-      <!-- <div class="mt-6">
-        <p class="text-lg font-semibold">SWIFT/BIC:</p>
-        <p class="text-lg">XYZBESMM</p>
-      </div> -->
-
-      <div class="mt-6">
-        <p class="text-lg font-light">
-          Puedes poner <b>"Tu nombre"</b> como concepto para que podamos agradecértelo personalmente. Por favor, no incluir <b>"Boda"</b> o <b>"Regalo"</b> o similares en el concepto. De cara a Hacienda puede ser mortal 😅.
+    <!-- ── HERO SIMPLE ── -->
+    <section class="page-hero-simple">
+      <div class="page-hero-simple-inner">
+        <span class="label-tag animate-fade-up">Regalos</span>
+        <h1 class="page-hero-simple-title animate-fade-up delay-200 font-great-vibes">
+          Con vosotros es suficiente
+        </h1>
+        <p class="page-hero-simple-sub animate-fade-up delay-300">
+          Lo que más ilusión nos hace es compartir este día con todos vosotros
         </p>
       </div>
-      <h2 class="text-3xl mt-4 font-miller">Dinero en efectivo 💵</h2>
-      <p class="mt-4 text-lg font-light">
-        <b>La mejor opción de cara a Hacienda.</b><br></br>
-        Hoy en día, los regalos de boda se consideran donaciones y por eso tenemos que declararlo.<br></br>
-        El dinero en efectivo también nos vendría muy bien.<br></br>
-      </p>
+    </section>
 
-      <h2 class="text-3xl mt-4 font-miller">Regalo personal 🎁</h2>
-      <p class="mt-4 text-lg font-light">
-        Si te gustaría hacernos un regalo más personal, aquí tienes algunas ideas que nos encantarían: <br></br>
-        <br></br>
-        - Vajillas y cristalería (preferiblemente en tonos neutros, blancos o azules) ✅ <br></br>
-        - Utensilios de cocina (sartenes, ollas, cuchillos de calidad) ✅ <br></br>
-        - Ropa de cama y toallas (preferiblemente en tonos neutros, blancos o azules) ✅ <br></br>
-        - Cabecero de cama <br></br>
-        - Electrodomésticos pequeños (batidora, tostadora, cafetera) ✅ <br></br>
-        - Minibar <br></br>
-      </p>
+    <!-- ── CONTENIDO ── -->
+    <section class="content-section">
+      <div class="content-inner">
 
-      <div class="mt-6">
-        <p class="text-lg font-light">¡Te lo agradecemos mucho!</p>
+        <!-- Transferencia -->
+        <div class="gift-block glass-card">
+          <div class="gift-block-header">
+            <span class="label-tag">Opción 1</span>
+            <h2 class="gift-block-title">Transferencia Bancaria</h2>
+          </div>
+          <p class="gift-text">
+            Si quieres hacernos un regalo, nos ayudaría mucho en nuestra nueva etapa algo de dinero para empezar. Sabemos que es el regalo más típico, pero es lo que más nos ayudaría.
+          </p>
+
+          <div class="iban-box glass-card">
+            <div class="iban-info">
+              <div>
+                <p class="iban-label">Titular</p>
+                <p class="iban-value"><u>Valle Hinojosa Herrera</u> o <u>José Luis Cáceres Losada</u></p>
+              </div>
+              <div>
+                <p class="iban-label">Entidad</p>
+                <p class="iban-value">BBVA</p>
+              </div>
+              <div>
+                <p class="iban-label">IBAN</p>
+                <p class="iban-value iban-number">{{ account || 'Contacta con nosotros' }}</p>
+              </div>
+            </div>
+            <button @click="copyIban" class="copy-btn" :class="{ 'copy-btn--done': copied }" aria-label="Copiar IBAN">
+              <span v-if="!copied">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184" />
+                </svg>
+                Copiar
+              </span>
+              <span v-else>✓ Copiado</span>
+            </button>
+          </div>
+
+          <p class="gift-note">
+            Puedes poner <strong>tu nombre</strong> como concepto. Por favor, no incluyas <strong>"Boda"</strong> o <strong>"Regalo"</strong> en el concepto. De cara a Hacienda puede ser mortal 😅
+          </p>
+        </div>
+
+        <!-- Efectivo -->
+        <div class="gift-block glass-card">
+          <div class="gift-block-header">
+            <span class="label-tag">Opción 2</span>
+            <h2 class="gift-block-title">Dinero en Efectivo</h2>
+          </div>
+          <p class="gift-text">
+            <strong>La mejor opción de cara a Hacienda.</strong> Hoy en día, los regalos de boda se consideran donaciones y tenemos que declararlos. El dinero en efectivo también nos vendría muy bien.
+          </p>
+        </div>
+
+        <!-- Regalo personal -->
+        <div class="gift-block glass-card">
+          <div class="gift-block-header">
+            <span class="label-tag">Opción 3</span>
+            <h2 class="gift-block-title">Regalo Personal</h2>
+          </div>
+          <p class="gift-text">Si te gustaría hacernos un regalo más personal, aquí tienes algunas ideas que nos encantarían:</p>
+          <ul class="gift-list">
+            <li>Vajillas y cristalería <em>(preferiblemente en tonos neutros, blancos o azules)</em></li>
+            <li>Utensilios de cocina <em>(sartenes, ollas, cuchillos de calidad)</em></li>
+            <li>Ropa de cama y toallas <em>(preferiblemente en tonos neutros, blancos o azules)</em></li>
+            <li>Cabecero de cama</li>
+            <li>Electrodomésticos pequeños <em>(batidora, tostadora, cafetera)</em></li>
+            <li>Minibar</li>
+          </ul>
+        </div>
+
+        <!-- CTA contacto -->
+        <div style="text-align:center; margin-top: 1rem;">
+          <a
+            href="mailto:jlcaclosada@gmail.com,vallehinojosa95@gmail.com"
+            class="btn-outline"
+          >
+            Contactar con nosotros
+          </a>
+        </div>
+
       </div>
-    </div>
-
-    <!-- Botón de contacto -->
-    <div class="mt-8 flex flex-col md:flex-row justify-center gap-6 animate-fade-in">
-      <a href="mailto:jlcaclosada@gmail.com,vallehinojosa95@gmail.com"
-        class="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-light rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl">
-        📩 Contactar con Nosotros
-      </a>
-    </div>
+    </section>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-// IBAN almacenado en variables de entorno
-const account = import.meta.env.VITE_ACCOUNT;
+const account = import.meta.env.VITE_ACCOUNT
+const copied = ref(false)
 
-// Estado para mostrar el mensaje "Copiado"
-const copied = ref(false);
-
-// Función para copiar el IBAN al portapapeles
-const copyToClipboard = async () => {
+const copyIban = async () => {
+  if (!account) return
   try {
-    await navigator.clipboard.writeText(account);
-    copied.value = true;
-
-    // Ocultar el mensaje después de 2 segundos
-    setTimeout(() => {
-      copied.value = false;
-    }, 2000);
-  } catch (err) {
-    console.error("Error al copiar el IBAN", err);
+    await navigator.clipboard.writeText(account)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2500)
+  } catch {
+    // clipboard API not available
   }
-};
+}
 </script>
 
+<style scoped>
+.page-wrap { overflow-x: hidden; }
 
-
-<style>
-/* Animaciones */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Hero simple */
+.page-hero-simple {
+  background: var(--color-ivory);
+  border-bottom: 1px solid var(--color-border);
+  padding: 7rem 1.5rem 4rem;
+  text-align: center;
+}
+.page-hero-simple-inner { max-width: 680px; margin: 0 auto; }
+.page-hero-simple-title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--color-gold);
+  margin: 0.75rem 0 0;
+  line-height: 1.1;
+}
+.page-hero-simple-sub {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  margin: 1rem 0 0;
+  line-height: 1.7;
 }
 
-@keyframes fade-slide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+/* Content */
+.content-section { background: var(--color-cream); }
+.content-inner { max-width: 780px; margin: 0 auto; padding: 4rem 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Gift blocks */
+.gift-block { padding: 2.25rem 2rem; }
+.gift-block-header { margin-bottom: 1.25rem; }
+.gift-block-title {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: 1.7rem; color: var(--color-dark);
+  margin: 0.5rem 0 0; letter-spacing: 0.02em;
+}
+.gift-text {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: 1rem; color: var(--color-muted);
+  line-height: 1.8; margin: 0 0 1.25rem;
+}
+.gift-note {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: 0.9rem; color: var(--color-muted);
+  line-height: 1.7; margin: 1rem 0 0;
+  font-style: italic;
+}
+.gift-note strong { color: var(--color-dark); font-weight: 400; font-style: normal; }
+
+/* IBAN box */
+.iban-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(184,148,74,0.05) !important;
+  border-color: rgba(184,148,74,0.25) !important;
+  flex-wrap: wrap;
+}
+.iban-info { display: flex; flex-direction: column; gap: 0.75rem; flex: 1; }
+.iban-label {
+  font-family: var(--font-sans); font-size: 0.55rem;
+  font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-gold); margin: 0 0 0.2rem;
+}
+.iban-value {
+  font-family: var(--font-serif); font-weight: 400;
+  font-size: 1rem; color: var(--color-dark); margin: 0;
+}
+.iban-number {
+  font-family: var(--font-sans); font-size: 0.95rem;
+  letter-spacing: 0.08em; color: var(--color-dark);
 }
 
-.font-custom {
-  font-family: 'Great Vibes', cursive;
+/* Copy button */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.4rem;
+  background: transparent;
+  border: 1.5px solid var(--color-gold);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
+.copy-btn svg { width: 14px; height: 14px; }
+.copy-btn:hover { background: var(--color-gold); color: white; }
+.copy-btn--done { background: var(--color-gold); color: white; }
 
-.animate-fade-in {
-  animation: fade-in 1s ease-out;
+/* Gift list */
+.gift-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 0.6rem;
 }
+.gift-list li {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: 1rem; color: var(--color-muted);
+  line-height: 1.5;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.gift-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-size: 0.8rem;
+}
+.gift-list em { color: var(--color-gold-dark); font-style: italic; }
 
-.animate-fade-slide {
-  animation: fade-slide 1s ease-out;
+@media (max-width: 600px) {
+  .content-inner { padding: 3rem 1.25rem; }
+  .gift-block { padding: 1.75rem 1.25rem; }
+  .iban-box { flex-direction: column; align-items: flex-start; }
+  .page-hero-simple { padding: 6rem 1.25rem 3rem; }
 }
 </style>
